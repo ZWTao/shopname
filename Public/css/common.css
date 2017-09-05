@@ -1,0 +1,9 @@
+
+body{height:50px; font:12px/18px "Microsoft Yahei",Tahoma,Helvetica,Arial,Verdana,"\5b8b\4f53",sans-serif; color:#51555c}
+img{border:0; cursor:pointer;}
+
+.container{width:980px; min-height:200px; margin:30px auto 0 auto; border:1px solid #d3d3d3; background:#fff; -moz-border-radius:5px; -khtml-border-radius:5px; -webkit-border-radius:5px; border-radius:5px}
+.}
+.btn{-webkit-border-radius:3px; -moz-border-radius:3px; -ms-border-radius:3px; -o-border-radius:3px; border-radius:3px; background-color:#ff8400; color:#fff; display:inline-block; height:28px; line-height:28px; text-align:center; padding:0 12px; transition:background-color .2s linear 0s; border:0; cursor:pointer}
+.btn:hover{background-color:#e95a00; text-decoration:none}
+

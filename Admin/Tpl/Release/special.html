@@ -114,9 +114,9 @@
 							<div>封面配图</div>
 							<br>
 							<div>
-							<div id="preview" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/special/<{$vo.cover_picture}>" alt=""></div>
+							<div id="preview1" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/special/<{$vo.cover_picture}>" alt=""></div>
 							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" name="cover_picture" onchange="preview(this)"/></div>
+							<div><input type="file" name="cover_picture" onchange="preview1(this)"/></div>
 							</div>
 							<br>
 							<div>主页标题</div>
@@ -163,7 +163,7 @@
 									<button id="add1" type="button" class="btn btn-primary">添加展示图片</button>
 									</div>
 									<div class="divvalue1" style="margin-left:200px;">
-									<?php var_dump(arry);?>
+								<!-- <?PHP	var_dump("$array"); ?> -->
 									<!-- <img src="__PUBLIC__/Uploads/special/<{[}>" width="50" height="50"> -->
 									<foreach  name="image" item="vo">
 									

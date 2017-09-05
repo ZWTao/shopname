@@ -20,7 +20,7 @@ return array(
 	// 'URL_PATHINFO_DEPR'=>'-',	// 修改URL的分隔符
 	'TMPL_L_DELIM'=>'<{', 			//修改左定界符
 	'TMPL_R_DELIM'=>'}>', 			//修改右定界符
-	'DEFAULT_MODULE'=>'Index', //默认模块
+	'DEFAULT_MODULE'=>'Bill', //默认模块
      'URL_CASE_INSENSITIVE' =>true,
 	/************************* 缓存设置 *************************/
 	 //'ACTION_CACHE_ON' => true,	  //开启缓存

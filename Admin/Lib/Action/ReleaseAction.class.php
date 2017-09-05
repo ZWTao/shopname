@@ -240,7 +240,7 @@
   			 $special_images=M("special_images");
   			 //查询出来要替换的special的相关数据
   		
-  			  $imagesdata=$special_images->where("gid=$id")->select();
+  			  $imagesdata=$special_images->where("gid="."$id")->select()->toarray();
         
   			//  parse_str($imagesdata,$array);
 			  

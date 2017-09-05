@@ -1,5 +1,5 @@
-<?php if (!defined('THINK_PATH')) exit();?>		<!-- 包含顶部 -->
-		<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!-- 包含顶部 -->
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Unicorn Admin</title>
@@ -130,170 +130,189 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
-		
+<!-- 添加jquery时出现兼容性问题-->
+<script>
+		$(function(){
+			/*添加商品*/
+			$("#add").click(function(){
+				 var url = "__URL__/add";
+				 location.href = url;
+			});
+			
+			/*ajax改变商品上下架状态*/
+			$(".shangjia").click(function(){
 
-<!-- ////////////////////////////////////////// 顶部 ///////////////////////////// -->
+				var issell = $(this).attr("shangjia");
+				var url = "__URL__/issell/id/"+issell;
+				var obj = $(this);
 
-		<!-- 后台颜色切换  -->
-<!-- 		<div id="style-switcher">
-			<i class="icon-arrow-left icon-white"></i>
-			<span>Style:</span>
-			<a href="#grey" style="background-color: #555555;border-color: #aaaaaa;"></a>
-			<a href="#blue" style="background-color: #2D2F57;"></a>
-			<a href="#red" style="background-color: #673232;"></a>
-		</div> -->
+				$.get(url,{ name: "John", time: "2pm" },function(data){
+					var result = data;
+
+					if(result == 1){
+						obj.attr("src","__PUBLIC__/admin/img/yes.gif");
+					}else if(result == 2){
+						obj.attr("src","__PUBLIC__/admin/img/no.gif");
+					}
+				
+				},'json');
+			})
+
+			/*ajax改变商品推荐状态*/
+			$(".tuijian").click(function(){
+
+				var tuijian = $(this).attr("tuijian");
+				var url = "__URL__/tuijian/id/"+tuijian;
+				var obj = $(this);
+
+				$.get(url,{ name: "John", time: "2pm" },function(data){
+					var result = data;
+
+					if(result == 1){
+						obj.attr("src","__PUBLIC__/admin/img/yes.gif");
+					}else if(result == 2){
+						obj.attr("src","__PUBLIC__/admin/img/no.gif");
+					}
+				
+				},'json');
+			})
+
+			/*ajax改变商品推荐状态*/
+			$(".tejia").click(function(){
+
+				var tejia = $(this).attr("tejia");
+				var url = "__URL__/tejia/id/"+tejia;
+				var obj = $(this);
+
+				$.get(url,{ name: "John", time: "2pm" },function(data){
+					var result = data;
+
+					if(result == 3){
+						obj.attr("src","__PUBLIC__/admin/img/yes.gif");
+					}else if(result == 1){
+						obj.attr("src","__PUBLIC__/admin/img/no.gif");
+					}
+				
+				},'json');
+			})
+
+			/*ajax改变商品团购状态*/
+			$(".tuangou").click(function(){
+
+				var tuangou = $(this).attr("tuangou");
+				var url = "__URL__/tuangou/id/"+tuangou;
+				var obj = $(this);
+
+				$.get(url,{ name: "John", time: "2pm" },function(data){
+					var result = data;
+
+					if(result == 1){
+						obj.attr("src","__PUBLIC__/admin/img/yes.gif");
+					}else if(result == 2){
+						obj.attr("src","__PUBLIC__/admin/img/no.gif");
+					}
+				
+				},'json');
+			})	
+		})
 		
-		<div id="content">
+</script>
+<div id="content">
         	<!-- 顶部右侧快捷操作按钮 开始 -->
-			<div id="content-header">
-				<h1>控制面板</h1>
-				<div class="btn-group">
-					<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
-					<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
-					<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
-					<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
-				</div>
+		<div id="content-header">
+			<h1>商品管理</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+				<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
 			</div>
-            <!-- 顶部右侧快捷操作按钮 结束 -->
-            <!-- 顶部面包屑导航 开始 -->
-			<div id="breadcrumb">
-				<a href="#" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-				<a href="#" class="current">控制面板</a>
-			</div>
-            <!-- 顶部面包屑导航 结束 -->
-			<div class="container-fluid">
-            	<!-- 顶部站点统计 大图标 开始 -->
-				<div class="row-fluid">
-						<ul class="stat-boxes">
-							<li>
-								<div class="left peity_bar_good">
-									<span>2,4,9,7,12,10,12</span>+20%
-								</div>
-								<div class="right">
-									<strong>36094</strong>访问
-								</div>
-							</li>
-							<li>
-								<div class="left peity_bar_neutral">
-									<span>20,15,18,14,10,9,9,9</span>0%
-								</div>
-								<div class="right">
-									<strong><?php echo ($stat["user"]); ?></strong>用户
-								</div>
-							</li>
-							<li>
-								<div class="left peity_bar_bad">
-									<span>3,5,9,10,12,20,80</span>-50%
-								</div>
-								<div class="right">
-									<strong><?php echo ($stat["order"]); ?></strong>订单
-								</div>
-							</li>
-							<li>
-								<div class="left peity_line_good">
-									<span>12,6,9,23,14,10,17</span>+70%
-								</div>
-								<div class="right">
-									<strong><?php echo ($stat["order"]); ?></strong>订单
-								</div>
-							</li>
-						</ul>
-					</div>	
-				</div>
-                <!-- 顶部站点统计 大图标 结束 -->
-                <!--  -->
-				<div class="row-fluid">
-					<div class="span12">
-<!-- 						<div class="alert alert-info">
-							欢迎使用 <strong>Unicorn Admin 主题</strong>。
-							<a href="#" data-dismiss="alert" class="close">×</a>
-						</div> -->
-                        <!-- 组件盒子 站点统计 -->
-						<div class="widget-box">
-                        	<!-- 标题 -->
-							<div class="widget-title"><span class="icon"><i class="icon-signal"></i></span><h5>站点统计</h5><div class="buttons"><a href="#" class="btn btn-mini"><i class="icon-refresh"></i> 刷新</a></div></div>
-                            <!-- 内容 -->
-							<div class="widget-content">
-								<div class="row-fluid">
-                                <!-- 左侧信息区 -->
-								<div class="span4">
-									<ul class="site-stats">
-										<li><i class="icon-user"></i> <strong><?php echo ($stat["user"]); ?></strong> <small>总用户数</small></li>
-										<li><i class="icon-arrow-right"></i> <strong><?php echo ($stat["lastuser"]); ?></strong> <small>名新注册用户（上周）</small></li>
-										<li class="divider"></li>
-										<li><i class="icon-shopping-cart"></i> <strong><?php echo ($stat["goods"]); ?></strong> <small>件商品</small></li>
-										<li><i class="icon-tag"></i> <strong><?php echo ($stat["complete"]); ?></strong> <small>条已完成交易</small></li>
-										<li><i class="icon-repeat"></i> <strong><?php echo ($stat["imperfect"]); ?></strong> <small>条未完成订单</small></li>
-									</ul>
-								</div>
-                                <!-- 右侧图表区 -->
-								<div class="span8">
-									<div class="chart"></div>
-								</div>	
-								</div>						
-							</div>
-						</div>					
-					</div>
-				</div>
-                <!-- 下部组件 -->
-				<div class="row-fluid">
-					<!-- -->
-					<div class="span6">
-						<div class="widget-box">
-							<!-- 标题 -->
-							<div class="widget-title"><span class="icon"><i class="icon-comment"></i></span><h5>操作动态</h5></div>
-							<!-- 内容部分 开始 -->
-							<div class="widget-content nopadding">
-								<?php if(is_array($log)): foreach($log as $key=>$v): echo ($v["loginfo"]); ?><br /><?php endforeach; endif; ?>
-							</div>
-							<!-- 内容部分 结束-->
+		</div>
+           <!-- 顶部右侧快捷操作按钮 结束 -->
+           <!-- 顶部面包屑导航 开始 -->
+		<div id="breadcrumb">
+			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+			<a href="__URL__/lists" title="返回用户管理" class="tip-bottom"> 商品管理</a>
+			<a href="#" class="current">商品列表</a>
+		</div>
+		<!-- 顶部面包屑导航 结束 -->
+		<!-- 主体区域开始 -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<form action="__URL__/caozuo" method="post" onsubmit="return confirm('确定操作!!!')">
+					<div class="widget-box">
+						<!-- 组件标题区域 -->
+						<div class="widget-title">
+						<h5>商品列表</h5>
+						<input class="icon" style="margin-top:5px;" type="button" name="add" id="add" value="添加商品">
+           					<input class="icon" style="margin-top:5px;" type="submit" name="shangjia" value="上架/下架">
+           					<input class="icon" style="margin-top:5px;" type="submit" name="submith" value="回收站">
+						<input class="icon" style="margin-top:5px;" type="submit" name="submitd" value="批量删除">
 						</div>
-					</div>
-					<!-- -->
-					<div class="span6">
-						<div class="widget-box">
-							<!-- 标题 -->
-							<div class="widget-title"><span class="icon"><i class="icon-comment"></i></span><h5>系统信息</h5></div>
-							<!-- 内容部分 开始 -->
-							<div class="widget-content nopadding">
-								<table class="table table-bordered">
-									<tbody>
-										<tr>
-											<td>服务器操作系统：</td>
-											<td><?php echo ($sysinfo["os"]); ?>&nbsp;<?php echo ($sysinfo["ip"]); ?></td>
-										</tr>
-										<tr>
-											<td>Web 服务器：</td>
-											<td><?php echo ($sysinfo["web_server"]); ?></td>
-										</tr>
-										<tr>
-											<td>PHP 版本：</td>
-											<td><?php echo ($sysinfo["php_ver"]); ?></td>
-										</tr>
-										<tr>
-											<td>MySQL 版本：</td>
-											<td>5.0.51b-community-nt-log</td>
-										</tr>
-										<tr>
-											<td>ThinkPHP 版本：</td>
-											<td><?php echo (THINK_VERSION); ?></td>
-										</tr>
-										<tr>
-											<td>MSS 版本：</td>
-											<td>V1.0</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<!-- 内容部分 结束-->
-						</div>
-					</div>
-				</div>
-					
-	<!--//////////////////////////////////////////////  底部 //////////////////////////////////-->
+						<!-- 组件内容区域 -->
+						<div class="widget-content nopadding">
+							<table class="table table-bordered data-table">
+								<!-- 表头字段区域 -->
+								<thead>
+									<tr>	
+										<th width="50"><input type="checkbox" id="checkbox">全选</th>
+										<th>货号</th>
+										<th>名称</th>
+										<!-- <th width="60">商品图片</th> -->
+										<th>价格</th>
+										<th>上架</th>
+										<th>推荐</th>
+										<th>特价</th>
+										<th>最新</th>
+										<th>库存(件)</th>
+										<th>添加时间</th>	
+										<th>操作</th>
+									</tr>
+								</thead>
+								<!-- 表格主体数据区域 -->
+								<tbody>
+								<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr height="30">
+										<td>
+											<input type="checkbox" name="all[]" value="<?php echo ($vo["id"]); ?>"/>
+										</td>
+										<td><?php echo ($vo["gnum"]); ?></td>
+										<td><?php echo ($vo["gname"]); ?></td>
+										<td><?php echo ($vo["price"]); ?></td>
+										<td><?php if($vo["issell"] == 1): ?><img class="shangjia" shangjia="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/yes.gif"/><?php else: ?><img class="shangjia" shangjia="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/no.gif"/><?php endif; ?></td>
 
-		<!-- 包含底部 -->
-					
+										<td><?php if($vo["tuijian"] == 1): ?><img class="tuijian" tuijian="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/yes.gif"/><?php else: ?><img class="tuijian" tuijian="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/no.gif"/><?php endif; ?></td>
+
+										<td><?php if($vo["status"] == 3): ?><img class="tejia" tejia="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/yes.gif"/><?php else: ?><img class="tejia" tejia="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/no.gif"/><?php endif; ?></td>
+
+										<td><?php if($vo["zuixin"] == 1): ?><img class="tuangou" tuangou="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/yes.gif"/><?php else: ?><img class="tuangou" tuangou="<?php echo ($vo["id"]); ?>" src="__PUBLIC__/admin/img/no.gif"/><?php endif; ?></td>
+										
+										<td><?php echo ($vo["gtotal"]); ?></td>
+										<td><?php echo (date("Y-m-d",$vo["selltime"])); ?></td>
+										<td class="taskOptions" style="width:120px;">
+										 <a href="__ROOT__/index.php/Products/product/id/<?php echo ($vo["id"]); ?>" class="tip-top" data-original-title="查看"><i class="icon-search"></i></a>&nbsp;
+									    	<a href="__URL__/upda/id/<?php echo ($vo["id"]); ?>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;
+									    	<a href="__URL__/huishou/id/<?php echo ($vo["id"]); ?>" class="tip-top" data-original-title="回收站"><i class="icon-trash"></i></a>&nbsp;
+									    	<a href="__URL__/del/id/<?php echo ($vo["id"]); ?>" class="tip-top" data-original-title="删除" onclick="return confirm('确定要删除!!!')">
+									    	<i class="icon-remove"></i>
+									    	</a>
+										</td>
+									</tr><?php endforeach; endif; ?>
+								</tbody>
+							</table>  
+						</div>
+					</div>
+				</form>
+				<!-- 组件盒子 结束 -->
+				</div>
+			</div>
+	 	</div>
+	 	<!-- 主体区域结束 -->
+</div>
+
+<!-- 包含底部 -->
+			
             <!-- 页面底部版权 -->
 			<div class="row-fluid">
 				<div id="footer" class="span12">

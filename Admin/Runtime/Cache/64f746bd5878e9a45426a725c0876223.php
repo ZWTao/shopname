@@ -114,15 +114,15 @@
                         <li><a href="__APP__/Release/activity">热门活动发布</a></li>
                     </ul>
                 </li>
-              <!--   <li class="submenu" id="tmpl">
-                    <a href="#"><i class="icon icon-bookmark"></i> <span>发布内容</span></a>
+              <li class="submenu" id="tmpl">
+                    <a href="#"><i class="icon icon-bookmark"></i> <span>套餐管理</span></a>
                     <ul>
-                        <li><a href="__APP__/Release/banner">发布主页banner配图</a></li>
-                         <li><a href="__APP__/Release/special">特价旅行活动发布</a></li>
-                        <li><a href="__APP__/Release/project">旅行项目发布</a></li>
-                        <li><a href="__APP__/Release/activity">热门活动发布</a></li>
+                        <li><a href="__APP__/Package/lists">模版列表</a></li>
+                        <li><a href="__APP__/Packageel/set">模版设置</a></li>
+                        <li><a href="">在线编辑</a></li>
+                        <li><a href="__APP__/Package/lists">邮件模板</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li id="count"><a href=""><i class="icon icon-signal"></i> <span>报表统计</span></a></li>
                 <li id="config"><a href="__APP__/Config/listsConfig"><i class="icon icon-cog"></i> <span>网站设置</span></a></li>
                     <!-- 基本信息、自定义导航、系统公告 ... -->
@@ -167,6 +167,17 @@
 					
    				
 })
+				$('#keyword').click(function () {
+					
+                 var element = document.getElementById("seachword"); 
+
+                  $.get("__URL__/seachKeyproject/",{element:element.value},function(data,data){
+
+                  });
+					
+					
+   				
+})
 		})
 </script>
 <div id="content">
@@ -203,7 +214,7 @@
 						<div class="widget-title">
 						<h4 style="margin-left:15px ;">旅行项目发布</h4>
 						<div>
-						<input type="text" class="icon" style="margin-top:-45px;margin-left:1045px;" name="add" id="add" value="添加关键字"><img style="margin-top:-45px; margin-left:5px; " width="30px" height="30px" src="__PUBLIC__/admin/img/z15.png" ></div>
+						<input type="text" class="icon" style="margin-top:-45px;margin-left:1045px;" name="keyword" id="seachword" value="添加关键字"><img id ="keyword" style="margin-top:-45px; margin-left:5px;" width="30px" height="30px" src="__PUBLIC__/admin/img/z15.png" ></div>
 						</div>	
 						<div class="widget-title" style="margin-top:5px; ">
 						<select id="label_name" style="text-align: center;margin-left:10px ;" >
@@ -228,7 +239,7 @@
 								<!-- 表格主体数据区域 -->
 								<tbody>
 								<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr>
-										<td style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" width="220"></td>
+										<th> style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" width="220"></th>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["title_name"]); ?></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><a href="__URL__/reproject/id/<?php echo ($vo["id"]); ?>" ><button type="submit" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></a></div> </td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><a href="__URL__/delproject/id/<?php echo ($vo["id"]); ?>"><button type="button" class="btn btn-default">删除</button></a></div></td>

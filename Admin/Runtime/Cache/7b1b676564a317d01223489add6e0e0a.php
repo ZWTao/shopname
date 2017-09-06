@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit();?><!-- 包含顶部 --> 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -129,3 +130,89 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
+
+
+<div id="content">
+	<!-- 顶部右侧快捷操作按钮 开始 -->
+		<div id="content-header">
+			<h1>模版管理</h1>
+			<div class="btn-group">
+				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
+				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+				<a class="btn btn-large tip-bottom" title="评论管理"><i class="icon-comment"></i><span class="label label-important">5</span></a>
+				<a class="btn btn-large tip-bottom" title="购物车管理"><i class="icon-shopping-cart"></i></a>
+			</div>
+		</div>
+        <!-- 顶部右侧快捷操作按钮 结束 -->
+        <!-- 顶部面包屑导航 开始 -->
+		<div id="breadcrumb">
+			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
+			<a href="__URL__/model" title="返回模版管理" class="tip-bottom"> 模版管理</a>
+			<a href="#" class="current"> 模版列表</a>
+		</div>
+		<!-- 顶部面包屑导航 结束 -->
+		<!-- 主体区域 -->
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<div class="widget-box">
+						<!-- 组件标题区域 -->
+						<div class="widget-title">
+							<h5>主题模板列表</h5>
+							<h5><a href="__URL__/add">添加模版</a></h5>
+						</div>
+						<!-- 组件内容区域 -->
+						<div class="widget-content nopadding">
+							<table class="table table-bordered data-table">
+								<!-- 表头字段区域 -->
+								<thead>
+									
+								</thead>
+								<!-- 表格主体数据区域 -->
+								<tbody>
+								
+								</tbody>
+							</table>  
+						</div>
+					</div>
+					<!-- 组件盒子 结束 -->
+				</div>
+			</div>
+			
+<!-- 包含底部 -->
+			
+            <!-- 页面底部版权 -->
+			<div class="row-fluid">
+				<div id="footer" class="span12">
+					Copyright &copy; 2014 <span class="label label-important">四重奏项目组</span> All Rights Reserved. 
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- 加载相关JS文件 -->
+    <script src="__PUBLIC__/admin/js/excanvas.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.ui.custom.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.uniform.js"></script>
+    <script src="__PUBLIC__/admin/js/select2.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.dataTables.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.flot.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.flot.resize.min.js"></script>
+    <script src="__PUBLIC__/admin/js/jquery.peity.min.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.tables.js"></script>
+    <script src="__PUBLIC__/admin/js/unicorn.dashboard.js"></script>
+
+    <script>
+        // 侧边菜单栏，高亮当前模块 样式设置
+    
+        // 去除之前的样式
+        $("li[class='active']").removeClass("active");
+        // 高亮当前样式
+        $("li[id='<?php echo (strtolower(MODULE_NAME)); ?>']").addClass("active");
+    </script>
+
+</body>
+</html>

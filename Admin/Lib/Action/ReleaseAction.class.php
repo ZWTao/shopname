@@ -421,6 +421,11 @@
 		 * 功能：关键字搜索
 		 */
 		function seachKeyproject(){
+			$label_name= trim($_GET['element']);
+
+			
+
+
 
 			
 
@@ -435,14 +440,14 @@
 
 			$label_name= trim($_GET['label_name']);
 
-			$project=m("project");
+			$project=M("project");
 
 			$project=$project->getField('project_lable',true); // 获取project_lable数组
 
-			if(!in_array($label_name,$project)){
+			if(in_array($label_name,$project)){
 
 				//查询要出现的详细内容
-			$data = $project->where("project_lable"=.$label_name)->order('project_addtime desc')->select();
+			$data = $project->where("project_lable=$label_name")->order('project_addtime desc')->select();
 		
 			}else{
 				// 查询要出现的详细内容
@@ -451,7 +456,7 @@
 		
 			}
 			$this->assign('data',$data);
-			$this->display();
+			
 
 		}
 		

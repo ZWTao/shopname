@@ -157,6 +157,16 @@
 				$('.tip-top1').live('click', function(){
 			 		$(this).parent().remove();
 				});
+				$('#label_name').change(function () {
+					var select = document.getElementById('label_name');
+
+					$.get("__URL__/seachlableproject/label_name/"+select.value,function(data,data){
+
+				 		
+  		});
+					
+   				
+})
 		})
 </script>
 <div id="content">
@@ -196,15 +206,15 @@
 						<input type="text" class="icon" style="margin-top:-45px;margin-left:1045px;" name="add" id="add" value="添加关键字"><img style="margin-top:-45px; margin-left:5px; " width="30px" height="30px" src="__PUBLIC__/admin/img/z15.png" ></div>
 						</div>	
 						<div class="widget-title" style="margin-top:5px; ">
-						<select style="text-align: center;margin-left:10px ;" >
-                             <option value ="guoji">国&nbsp;&nbsp;&nbsp;&nbsp;际</option>
-                             <option value ="dongnan">东&nbsp;&nbsp;&nbsp;&nbsp;南</option>
-                             <option value="xinan">西&nbsp;&nbsp;&nbsp;&nbsp;南</option>
-                             <option value="dongbei">东&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value ="huabei">华&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value ="xibei">西&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value="huazhong">华&nbsp;&nbsp;&nbsp;&nbsp;中</option>
-                             <option value="zuixin">最&nbsp;&nbsp;&nbsp;&nbsp;新</option>
+						<select id="label_name" style="text-align: center;margin-left:10px ;" >
+                             <option value ="国际">国&nbsp;&nbsp;&nbsp;&nbsp;际</option>
+                             <option value ="东南">东&nbsp;&nbsp;&nbsp;&nbsp;南</option>
+                             <option value="西南">西&nbsp;&nbsp;&nbsp;&nbsp;南</option>
+                             <option value="东北">东&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value ="华北">华&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value ="西北">西&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value="华中">华&nbsp;&nbsp;&nbsp;&nbsp;中</option>
+                             <option value="最新">最&nbsp;&nbsp;&nbsp;&nbsp;新</option>
                         </select> 
 						
 						</div>	

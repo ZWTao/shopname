@@ -231,7 +231,7 @@
 			// 实例化banners对象
 			 $special = M("special"); 
     		//查询出来要替换的特价活动的相关数据
-  			 $data = $special->where("id=$id")->find();
+  			 $data1 = $special->where("id=$id")->find();
 
 		
 			// $datacount=$special_images->where('gid=$id')->count();
@@ -240,8 +240,9 @@
   			 $special_images=M("special_images");
   			 //查询出来要替换的special的相关数据
   		
-  			  $imagesdata=$special_images->where("gid="."$id")->select()->toarray();
+  			  $imagesdata=$special_images->where("gid="."$id")->select();
         
+        	
   			//  parse_str($imagesdata,$array);
 			  
 
@@ -255,11 +256,14 @@
 			// 	$row["pic"] =$special_images->where("gid"=.$row['id'])->select();
 
 			// }
-			  $this->assign("array",$array);
+			 
 
   			 $this->assign("imagesdata",$imagesdata);
-  			 $this->assign("data",$data);
-  		
+  			 $this->assign("data1",$data);
+  			 // $this->fetch();
+
+  		 $this->ajaxReturn($data1,'json');
+  		$this->ajaxReturn($imagesdata,'json');
 
 		}
 
@@ -418,6 +422,9 @@
 		 */
 		function seachKeyproject(){
 
+			
+
+
 
 		}
 		/**
@@ -425,6 +432,26 @@
 		 * 功能：标签搜索
 		 */
 		function seachlableproject(){
+
+			$label_name= trim($_GET['label_name']);
+
+			$project=m("project");
+
+			$project=$project->getField('project_lable',true); // 获取project_lable数组
+
+			if(!in_array($label_name,$project)){
+
+				//查询要出现的详细内容
+			$data = $project->where("project_lable"=.$label_name)->order('project_addtime desc')->select();
+		
+			}else{
+				// 查询要出现的详细内容
+			$data = $project->order('project_addtime desc')->limit(5)->select();
+		
+		
+			}
+			$this->assign('data',$data);
+			$this->display();
 
 		}
 		

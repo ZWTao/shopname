@@ -130,7 +130,27 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
+<script>
+$("button").click(function(){
+  $.post("demo_test_post.asp",
+  {
+    name:"Donald Duck",
+    city:"Duckburg"
+  },
+  function(data,status){
+    alert("Data: " + data + "\nStatus: " + status);
+  });
+});
 
+	$("#tihaun").click(function(){
+		alert("1111");
+		$post("__URL__/delspecial/id/"+tihuan;
+alert(1111);
+			)
+	})
+
+
+</script>
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/ueditor/themes/default/css/umeditor.min.css">
 
 <script>
@@ -158,6 +178,26 @@
 				$('.tip-top1').live('click', function(){
 			 		$(this).parent().remove();
 				});
+				$("#tihuan").click(function(){
+					var tihuan = $(this).attr("tihuan");
+				 	$.get("__URL__/respecial/id/"+tihuan,[data1:"data1"],function(data,data){
+
+				 		console.log(data1);
+  		},"json");
+					
+					// $.ajax({
+					// 	type:"get",
+					// 	url:"__URL__/respecial/id/"+"tihuan";
+					// 	datatype:"json"
+					// 	success:function(data){
+					// 		alert(111);
+					// 	}
+
+
+
+
+					// })
+				})
 		})
 	
 
@@ -205,7 +245,7 @@
 								<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr>
 										<td style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" width="220"></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["title_name"]); ?></td>
-										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><a href="__URL__/respecial/id/<?php echo ($vo["id"]); ?>" ><button type="submit" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></a></div> </td>
+										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="submit" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></div> </td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><button type="button" class="btn btn-default"><a href="__URL__/delspecial/id/<?php echo ($vo["id"]); ?>">删除</a></button></div></td>
 									</tr><?php endforeach; endif; ?>
 									<tr >
@@ -232,51 +272,52 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">特价旅行活动发布</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<?php if(is_array($data)): foreach($data as $key=>$vo): ?><form action="__URL__/replacespecial/id/<?php echo ($vo["id"]); ?>"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						
+						<?php if(is_array($data)): foreach($data as $key=>$vo1): ?><form action="__URL__/replacespecial/id/<?php echo ($vo1["id"]); ?>"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
-							<div ><input type="text" name="title_name" value="<?php echo ($vo["title_name"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="title_name" value="<?php echo ($vo1["title_name"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>封面配图</div>
 							<br>
 							<div>
-							<div id="preview1" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" alt=""></div>
+							<div id="preview1" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo1["cover_picture"]); ?>" alt=""></div>
 							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
 							<div><input type="file" name="cover_picture" onchange="preview1(this)"/></div>
 							</div>
 							<br>
 							<div>主页标题</div>
 							<br>
-							<div ><input type="text" name="home_tilte" value="<?php echo ($vo["home_tilte"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="home_tilte" value="<?php echo ($vo1["home_tilte"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>主页价格</div>
 							<br>
-							<div ><input type="text" name="home_price" value="<?php echo ($vo["home_price"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="home_price" value="<?php echo ($vo1["home_price"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>主页项目简介</div>
 							<br>
-							<div ><input type="text" name="project_profile" value="<?php echo ($vo["special_profile"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_profile" value="<?php echo ($vo1["special_profile"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>
-							<div ><input type="text" name="special_price" value="<?php echo ($vo["special_price"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="special_price" value="<?php echo ($vo1["special_price"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>出发城市</div>
 							<br>
-							<div ><input type="text" name="start_city" value="<?php echo ($vo["start_city"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="start_city" value="<?php echo ($vo1["start_city"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
 							<div class="demo1">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$vo["start_time"])); ?>">--
-								<input class="inline laydate-icon" name="end_time" id="end" value="<?php echo (date('Y-m-d',$vo["end_time"])); ?>">
+								<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$vo1["start_time"])); ?>">--
+								<input class="inline laydate-icon" name="end_time" id="end" value="<?php echo (date('Y-m-d',$vo1["end_time"])); ?>">
 								
 							</div>
 							</div>
 							<br>
 							<div>标签</div>
 							<br>
-							<div ><input type="text" value="<?php echo ($label_name); ?>" name="label_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" value="<?php echo ($vo1["label_name"]); ?>" name="label_name" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>展示窗配图</div>
 							<br>
@@ -289,9 +330,8 @@
 									<button id="add1" type="button" class="btn btn-primary">添加展示图片</button>
 									</div>
 									<div class="divvalue1" style="margin-left:200px;">
-								<!-- <?PHP	var_dump("$array"); ?> -->
-									<!-- <img src="__PUBLIC__/Uploads/special/<{[}>" width="50" height="50"> -->
-									<?php if(is_array($image)): foreach($image as $key=>$vo): endforeach; endif; ?>
+								
+									<?php if(is_array($imagesdata)): foreach($imagesdata as $key=>$row): endforeach; endif; ?>
 								
 										<input  type="file"  name="pic[]" style="width:300px;"/><a href="javascript:void(0)" class="tip-top1">&nbsp;&nbsp;<i class="icon-remove"></i></a>
 									</div>
@@ -501,6 +541,9 @@
 	    max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
 	});
 	</script>
+	<script>
+
+	</script>
 <!-- 包含底部 -->
 			
             <!-- 页面底部版权 -->
@@ -532,7 +575,7 @@
         // 去除之前的样式
         $("li[class='active']").removeClass("active");
         // 高亮当前样式
-        $("li[id='<{$Think.MODULE_NAME|strtolower}>']").addClass("active");
+        $("li[id='<?php echo (strtolower(MODULE_NAME)); ?>']").addClass("active");
     </script>
 
 </body>

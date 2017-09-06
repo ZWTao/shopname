@@ -235,7 +235,7 @@
 				</div>
 			</div>
 <!--替换活动-->
-			<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -251,9 +251,9 @@
 							<div>封面配图</div>
 							<br>
 							<div>
-							<div id="preview" style="width:100px; height: 100px;"></div>
+							<div id="preview1" style="width:100px; height: 100px;"></div>
 							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" name="cover_picture" onchange="preview(this)"/></div>
+							<div><input type="file" name="cover_picture" onchange="preview1(this)"/></div>
 							</div>
 							<br>
 							<div>主页标题</div>
@@ -319,7 +319,7 @@
 			</div>
 <!--替换活动-->
 <!--添加活动-->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">

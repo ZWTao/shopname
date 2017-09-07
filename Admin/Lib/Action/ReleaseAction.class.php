@@ -168,8 +168,8 @@
 			R('Level/sendspecial'); // 权限验证
 
 			//把开始时间,结束时间转化为时间戳
-			$data['start_time']= strtotime($_POST['start_time']);
-			$data['end_time']= strtotime($_POST['end_time']);
+			$_POST['start_time']= strtotime($_POST['start_time']);
+			$_POST['end_time']= strtotime($_POST['end_time']);
 
 			//实例化类
 			import('ORG.Net.UploadFile'); 
@@ -231,40 +231,19 @@
 			// 实例化banners对象
 			 $special = M("special"); 
     		//查询出来要替换的特价活动的相关数据
-  			 $data1 = $special->where("id=$id")->find();
-
-		
-			// $datacount=$special_images->where('gid=$id')->count();
+  			 $data = $special->where("id=$id")->find();
 
   			 //实例化special_images对象
   			 $special_images=M("special_images");
   			 //查询出来要替换的special的相关数据
   		
-  			  $imagesdata=$special_images->where("gid="."$id")->select();
+  			  $imagesdata=$special_images->where("gid=$id")->select();
+
         
-        	
-  			//  parse_str($imagesdata,$array);
-			  
-
-
-  			 //
-  			 //
-  			// $image=explode(",",$imagesdata);
-  			// $image=str_split($image);
-
-			// foreach($imagesdata as $row){
-			// 	$row["pic"] =$special_images->where("gid"=.$row['id'])->select();
-
-			// }
-			 
-
-  			 $this->assign("imagesdata",$imagesdata);
-  			 $this->assign("data1",$data);
-  			 // $this->fetch();
-
-  		 $this->ajaxReturn($data1,'json');
-  		$this->ajaxReturn($imagesdata,'json');
-
+				$this->assign("imagesdata",$imagesdata);
+				$this->assign("data",$data);
+			
+  				 $this->display();
 		}
 
 		/**
@@ -371,6 +350,11 @@
 
 			R('Level/sendproject'); // 权限验证
 
+			//把开始时间,结束时间转化为时间戳
+			$_POST['prostart_time']= strtotime($_POST['start_time']);
+			$_POST['proend_time']= strtotime($_POST['end_time']);
+
+
 			//实例化类
 			import('ORG.Net.UploadFile'); 
 			$upload = new UploadFile();
@@ -421,13 +405,17 @@
 		 * 功能：关键字搜索
 		 */
 		function seachKeyproject(){
+
+			//获取关键字
 			$label_name= trim($_GET['element']);
+			//实例化project
+			$project=M("project");
+			//进行关键字查询
+			$where["project_lable|project_title|cover_word"]=array('like',"%$laber_name%");
 
-			
+			$data=$project->where($where)->select();
 
-
-
-			
+			$this->assign('data',$data);
 
 
 
@@ -438,12 +426,13 @@
 		 */
 		function seachlableproject(){
 
+			//获取选择的标签
 			$label_name= trim($_GET['label_name']);
 
 			$project=M("project");
-
+			//获取project中标签
 			$project=$project->getField('project_lable',true); // 获取project_lable数组
-
+			//判断是否存在于project标签中是否存在获取选择的标签，如果不存在，进行最新搜索
 			if(in_array($label_name,$project)){
 
 				//查询要出现的详细内容
@@ -455,6 +444,7 @@
 		
 		
 			}
+
 			$this->assign('data',$data);
 			
 
@@ -596,6 +586,11 @@
 			
 				R('Level/sendactivity'); // 权限验证
 
+				//把开始时间,结束时间转化为时间戳
+			$_POST['activity_starttime']= strtotime($_POST['start_time']);
+			$_POST['activity_endtime']= strtotime($_POST['end_time']);
+
+
 			//实例化类
 			import('ORG.Net.UploadFile'); 
 			$upload = new UploadFile();
@@ -666,25 +661,62 @@
   		
   			  $imagesdata=$activity_images->where("gid=$id")->select();
         
-  			//  parse_str($imagesdata,$array);
-			  
-
-
-  			 //
-  			 //
-  			// $image=explode(",",$imagesdata);
-  			// $image=str_split($image);
-
-			// foreach($imagesdata as $row){
-			// 	$row["pic"] =$special_images->where("gid"=.$row['id'])->select();
-
-			// }
+  
 			  $this->assign("array",$array);
 
   			 $this->assign("imagesdata",$imagesdata);
   			 $this->assign("data",$data);
   		
 		}
+		/**
+		 * 函数名：seach_activityKeyword
+		 * 功能：活动关键字搜索
+		 */
+		function seachKeyactivity(){
+
+			//获取关键字
+			$label_name= trim($_GET['element']);
+			//实例化project
+			$activity=M("activity");
+			//进行关键字查询
+			$where["activity_lable|activity_title"]=array('like',"%$laber_name%");
+
+			$data=$activity->where($where)->select();
+
+			$this->assign('data',$data);
+
+
+
+		}
+		/**
+		 * 函数名：seachactivitylable
+		 * 功能：标签搜索
+		 */
+		function seachlableactivity(){
+
+			//获取选择的标签
+			$label_name= trim($_GET['label_name']);
+
+			$activity=M("activity");
+			//获取project中标签
+			$activity=$activity->getField('activity_lable',true); // 获取project_lable数组
+			//判断是否存在于project标签中是否存在获取选择的标签，如果不存在，进行最新搜索
+			if(in_array($label_name,$activity)){
+
+				//查询要出现的详细内容
+			$data = $activity->where("activity_lable=$label_name")->order('activity_addtime desc')->select();
+		
+			}else{
+				// 查询要出现的详细内容
+			$data = $activity->order('activity_addtime desc')->limit(5)->select();
+		
+		
+			}
+
+			$this->assign('data',$data);
+
+		}
+		
 		/**
 		 * 函数名：replaceactivity
 		 * 功能：替换热门活动

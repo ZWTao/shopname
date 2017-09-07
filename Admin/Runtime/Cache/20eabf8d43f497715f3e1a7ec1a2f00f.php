@@ -114,15 +114,15 @@
                         <li><a href="__APP__/Release/activity">热门活动发布</a></li>
                     </ul>
                 </li>
-              <!--   <li class="submenu" id="tmpl">
-                    <a href="#"><i class="icon icon-bookmark"></i> <span>发布内容</span></a>
+              <li class="submenu" id="tmpl">
+                    <a href="#"><i class="icon icon-bookmark"></i> <span>套餐管理</span></a>
                     <ul>
-                        <li><a href="__APP__/Release/banner">发布主页banner配图</a></li>
-                         <li><a href="__APP__/Release/special">特价旅行活动发布</a></li>
-                        <li><a href="__APP__/Release/project">旅行项目发布</a></li>
-                        <li><a href="__APP__/Release/activity">热门活动发布</a></li>
+                        <li><a href="__APP__/Package/lists">模版列表</a></li>
+                        <li><a href="__APP__/Packageel/set">模版设置</a></li>
+                        <li><a href="">在线编辑</a></li>
+                        <li><a href="__APP__/Package/lists">邮件模板</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li id="count"><a href=""><i class="icon icon-signal"></i> <span>报表统计</span></a></li>
                 <li id="config"><a href="__APP__/Config/listsConfig"><i class="icon icon-cog"></i> <span>网站设置</span></a></li>
                     <!-- 基本信息、自定义导航、系统公告 ... -->

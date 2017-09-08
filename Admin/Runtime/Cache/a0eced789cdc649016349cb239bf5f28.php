@@ -1,4 +1,48 @@
-<?php if (!defined('THINK_PATH')) exit();?><div class="modal-dialog modal-lg">
+<?php if (!defined('THINK_PATH')) exit();?>
+<link type="text/css" rel="stylesheet" href="__PUBLIC__/ueditor/themes/default/css/umeditor.min.css">
+
+<script>
+      	window.UMEDITOR_HOME_URL = "__PUBLIC__/ueditor/";
+</script>
+
+<!-- <script type="text/javascript" src="__PUBLIC__/ueditor/jquery.js"></script> -->
+<script type="text/javascript" src="__PUBLIC__/ueditor/umeditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/ueditor/umeditor.js"></script> 
+<script>
+	$(function(){
+
+			$("#add1").click(function(){
+						$("#typevalue1").append('<div class="divvalue1" style="margin-left:200px;"><input  type="file"  name="pic[]" style="width:300px;"/><a href="javascript:void(0)" class="tip-top1">&nbsp;&nbsp;<i class="icon-remove"></i></a></div>');
+				})
+
+				//附加一个事件处理函数，即使这个元素是以后再添加进来的也有效
+				$('.tip-top1').live('click', function(){
+			 		$(this).parent().remove();
+				});
+
+  					$(".btn-default").click(function(){
+					var tihuan = $(this).attr("tihuan");
+				 	$.get("__URL__/respecial/id/"+tihuan,{id:tihuan},function(data){
+				 		$("#userModal").html('');
+				 		$("#userModal").html(data);
+				 		$("#userModal").html(imagedata);
+				 		$("#userModal").attr("style","display:block;");
+  					});
+  			// 		$(".btn-default").click(function(){
+					// var tihuan = $(this).attr("tihuan");
+				 // 	$.get("__URL__/delspecial/id/"+tihuan,{id:tihuan},function(data){
+				 		
+  			// 		});
+
+				})
+			
+		})
+	
+
+</script>
+
+
+<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -40,12 +84,12 @@
 				<div ><input type="text" name="start_city" value="<?php echo ($data["start_city"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 				<br>
 				<div class="box">					
-				<div class="demo1">
+				<!-- <div class="demo1">
 					<h3>出游日期</h3>
 					<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$data["start_time"])); ?>">--
 					<input class="inline laydate-icon" name="end_time" id="end" value="<?php echo (date('Y-m-d',$data["end_time"])); ?>">
 					
-				</div>
+				</div> -->
 				</div>
 				<br>
 				<div>标签</div>
@@ -64,7 +108,7 @@
 						</div>
 						<div class="divvalue1" style="margin-left:200px;">
 				
-						<?php if(is_array($imagesdata)): foreach($imagesdata as $key=>$row): endforeach; endif; ?>
+						<?php if(is_array($imagesdata)): foreach($imagesdata as $key=>$row): ?><img src="__PUBLIC__/Uploads/special/<?php echo ($row["pic"]); ?>" width="60" height="60"><?php endforeach; endif; ?>
 					
 							<input  type="file"  name="pic[]" style="width:300px;"/><a href="javascript:void(0)" class="tip-top1">&nbsp;&nbsp;<i class="icon-remove"></i></a>
 						</div>
@@ -83,3 +127,67 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+ var editor = UM.getEditor('gdescription',{
+            
+            //默认的编辑区域高度
+            initialFrameHeight:100,
+            initialFrameWidth:500
+            //更多其他参数，请参考umeditor.config.js中的配置项
+        });
+
+!function(){
+		laydate.skin('molv');//切换皮肤，请查看skins下面皮肤库
+		laydate({elem: '#demo1'});//绑定元素
+	}();
+
+
+	//日期范围限制
+	var start = {
+	    elem: '#start',
+	    format: 'YYYY-MM-DD',
+	    min: laydate.now(), //设定最小日期为当前日期
+	    max: '2099-06-16', //最大日期
+	    istime: true,
+	    istoday: false,
+	    choose: function(datas){
+	         end.min = datas; //开始日选好后，重置结束日的最小日期
+	         end.start = datas //将结束日的初始值设定为开始日
+	    }
+	};
+
+	var end = {
+	    elem: '#end',
+	    format: 'YYYY-MM-DD',
+	    min: laydate.now(),
+	    max: '2099-06-16',
+	    istime: true,
+	    istoday: false,
+	    choose: function(datas){
+	        start.max = datas; //结束日选好后，充值开始日的最大日期
+	    }
+	};
+	laydate(start);
+	laydate(end);
+
+
+	//自定义日期格式
+	laydate({
+	    elem: '#test1',
+	    format: 'YYYY年MM月DD日',
+	    festival: true, //显示节日
+	    choose: function(datas){ //选择日期完毕的回调
+	        alert('得到：'+datas);
+	    }
+	});
+
+	//日期范围限定在昨天到明天
+	laydate({
+	    elem: '#hello3',
+	    min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
+	    max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
+	});
+
+</script>

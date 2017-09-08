@@ -130,27 +130,7 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
-<script>
-$("button").click(function(){
-  $.post("demo_test_post.asp",
-  {
-    name:"Donald Duck",
-    city:"Duckburg"
-  },
-  function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
-});
 
-	$("#tihaun").click(function(){
-		alert("1111");
-		$post("__URL__/delspecial/id/"+tihuan;
-alert(1111);
-			)
-	})
-
-
-</script>
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/ueditor/themes/default/css/umeditor.min.css">
 
 <script>
@@ -170,14 +150,7 @@ alert(1111);
 				$('.tip-top').live('click', function(){
 			 		$(this).parent().remove();
 				})
-			$("#add1").click(function(){
-						$("#typevalue1").append('<div class="divvalue1" style="margin-left:200px;"><input  type="file"  name="pic[]" style="width:300px;"/><a href="javascript:void(0)" class="tip-top1">&nbsp;&nbsp;<i class="icon-remove"></i></a></div>');
-				})
-
-				//附加一个事件处理函数，即使这个元素是以后再添加进来的也有效
-				$('.tip-top1').live('click', function(){
-			 		$(this).parent().remove();
-				});
+			
 
   					$(".btn-default").click(function(){
 					var tihuan = $(this).attr("tihuan");
@@ -187,11 +160,6 @@ alert(1111);
 				 		$("#userModal").html(imagedata);
 				 		$("#userModal").attr("style","display:block;");
   					});
-  			// 		$(".btn-default").click(function(){
-					// var tihuan = $(this).attr("tihuan");
-				 // 	$.get("__URL__/delspecial/id/"+tihuan,{id:tihuan},function(data){
-				 		
-  			// 		});
 
 				})
 			
@@ -306,7 +274,7 @@ alert(1111);
 							<div class="box">					
 							<div class="demo1">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$vo1["start_time"])); ?>">--
+								<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$vo1["start_time"])); ?>">
 								<input class="inline laydate-icon" name="end_time" id="end" value="<?php echo (date('Y-m-d',$vo1["end_time"])); ?>">
 								
 							</div>
@@ -393,7 +361,7 @@ alert(1111);
 							<div ><input type="text" name="start_city" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
-							<div class="demo1">
+							<div class="demo">
 								<h3>出游日期</h3>
 								<input class="inline laydate-icon" name="start_time" id="start_time" value="2017-8-31更新">--
 								<input class="inline laydate-icon" name="end_time" id="end_time" value="2017-8-31更新">
@@ -438,15 +406,6 @@ alert(1111);
 	
 <SCRIPT type=text/javascript>
 
-//var editor = UM.getEditor('myEditor',{initialFrameWidth:600});
-
-    var editor = UM.getEditor('gdescription',{
-            
-            //默认的编辑区域高度
-            initialFrameHeight:100,
-            initialFrameWidth:500
-            //更多其他参数，请参考umeditor.config.js中的配置项
-        });
     var editor = UM.getEditor('gdescription1',{
             
             //默认的编辑区域高度
@@ -490,7 +449,6 @@ alert(1111);
 	};
 	laydate(start);
 	laydate(end);
-
 
 //日期范围限制
 	var start = {
@@ -537,9 +495,6 @@ alert(1111);
 	    min: laydate.now(-1), //-1代表昨天，-2代表前天，以此类推
 	    max: laydate.now(+1) //+1代表明天，+2代表后天，以此类推
 	});
-	</script>
-	<script>
-
 	</script>
 <!-- 包含底部 -->
 			

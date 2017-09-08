@@ -476,6 +476,7 @@
   			 $this->assign("iamgesdata",$iamgesdata);
   			 $this->assign("data",$data);
 
+  			 $this->display();
 
 		}
 		/**

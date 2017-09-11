@@ -242,8 +242,7 @@
         
 				$this->assign("imagesdata",$imagesdata);
 				$this->assign("data",$data);
-			
-  				 $this->display();
+				$this->display();
 		}
 
 		/**
@@ -470,10 +469,10 @@
   			 $project_images=M("project_images");
   			 //查询出来要替换的special的相关数据
   		
-  			 $iamgesdata=$project_images->where("gid=$id")->select();
+  			 $imagesdata=$project_images->where("gid=$id")->select();
 
   			
-  			 $this->assign("iamgesdata",$iamgesdata);
+  			 $this->assign("imagesdata",$imagesdata);
   			 $this->assign("data",$data);
 
   			 $this->display();

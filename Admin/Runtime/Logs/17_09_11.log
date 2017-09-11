@@ -1,0 +1,2257 @@
+[ 2017-09-11T15:34:53+08:00 ] 127.0.0.1 /admin.php
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.136007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.137007s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.004000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.002000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-09-11T15:35:06+08:00 ] 127.0.0.1 /admin.php/Login/login
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_user_admin` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `mss_user_admin` WHERE ( `username` = 'admin' ) AND ( `userpwd` = '7fef6171469e80d32c0559f88b377245' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `mss_user_admin` SET `logintime`=1505115306 WHERE ( `id` = 1 ) [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:35:06+08:00 ] 127.0.0.1 /admin.php/index/index.html
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_user` [ RunTime:0.013001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_user` WHERE ( ustatus=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_user` WHERE (  (`regtime` BETWEEN 1504454400 AND 1504972800 ) ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_order` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_order` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_order` WHERE ( paystatus=3 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_order` WHERE ( `paystatus` NOT IN ('3') ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_goods` [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `mss_goods` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_admin_log` ORDER BY time desc LIMIT 0,5   [ RunTime:0.052003s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.037003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.037003s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:35:21+08:00 ] 127.0.0.1 /admin.php/Release/banner
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_banners` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_banners` ORDER BY upload_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.028001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001001s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:35:32+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505115332,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.012000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.003000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-09-11T15:35:37+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.023001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:38:33+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505115513,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:38:35+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-09-11T15:38:35+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:38:35+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:38:35+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:38:44+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:38:44+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:38:44+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:44:05+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505115845,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:44:07+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:44:07+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:44:07+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:44:48+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505115888,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:44:50+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:44:50+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:44:50+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:44:50+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:47:37+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505116057,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001001s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:47:38+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:47:38+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:47:38+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:47:38+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:53:24+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505116404,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:53:25+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:53:25+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:53:25+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:53:25+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:54:01+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505116441,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.022001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-09-11T15:54:03+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T15:54:03+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:54:03+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:54:03+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:55:29+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505116529,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:55:31+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T15:55:31+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T15:55:31+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T15:55:31+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T16:07:22+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117241,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:08:35+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117315,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:08:37+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:08:37+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T16:08:37+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T16:08:37+08:00 ] 127.0.0.1 /admin.php/Release/skins/molv/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T16:08:48+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:08:48+08:00 ] 127.0.0.1 /admin.php/Release/need/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:need
+
+[ 2017-09-11T16:08:48+08:00 ] 127.0.0.1 /admin.php/Release/skins/default/laydate.css
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:skins
+
+[ 2017-09-11T16:09:24+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117364,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:09:27+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:12:04+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117524,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:12:07+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:13:05+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117585,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:13:06+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:13:18+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117598,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:14:00+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:14:58+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117698,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:14:59+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:15:33+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117733,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:15:34+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:16:59+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117819,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:17:01+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:17:31+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505117851,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:17:33+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:19:00+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:19:13+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:23:24+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118204,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 242 行.
+NOTIC: [8] Undefined index: title_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 245 行.
+NOTIC: [8] Undefined index: cover_picture D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 250 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 257 行.
+NOTIC: [8] Undefined index: home_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 261 行.
+NOTIC: [8] Undefined index: special_profile D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 265 行.
+NOTIC: [8] Undefined index: special_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 269 行.
+NOTIC: [8] Undefined index: start_city D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 273 行.
+NOTIC: [8] Undefined index: start_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 278 行.
+NOTIC: [8] Undefined index: end_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 279 行.
+NOTIC: [8] Undefined index: label_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 286 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 300 行.
+NOTIC: [8] Undefined index: plate_content D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 311 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:23:25+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:24:51+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118291,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 242 行.
+NOTIC: [8] Undefined index: title_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 245 行.
+NOTIC: [8] Undefined index: cover_picture D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 250 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 257 行.
+NOTIC: [8] Undefined index: home_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 261 行.
+NOTIC: [8] Undefined index: special_profile D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 265 行.
+NOTIC: [8] Undefined index: special_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 269 行.
+NOTIC: [8] Undefined index: start_city D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 273 行.
+NOTIC: [8] Undefined index: start_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 278 行.
+NOTIC: [8] Undefined index: end_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 279 行.
+NOTIC: [8] Undefined index: label_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 286 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 300 行.
+NOTIC: [8] Undefined index: plate_content D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 311 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:24:53+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:26:20+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118380,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: id D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 242 行.
+NOTIC: [8] Undefined index: title_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 245 行.
+NOTIC: [8] Undefined index: cover_picture D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 250 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 257 行.
+NOTIC: [8] Undefined index: home_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 261 行.
+NOTIC: [8] Undefined index: special_profile D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 265 行.
+NOTIC: [8] Undefined index: special_price D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 269 行.
+NOTIC: [8] Undefined index: start_city D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 273 行.
+NOTIC: [8] Undefined index: start_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 278 行.
+NOTIC: [8] Undefined index: end_time D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 279 行.
+NOTIC: [8] Undefined index: label_name D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 286 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 300 行.
+NOTIC: [8] Undefined index: plate_content D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 311 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001001s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:26:21+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:27:20+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118440,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:27:21+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:28:45+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.001000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118525,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:28:47+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001001s ]
+
+[ 2017-09-11T16:29:44+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118584,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:30:22+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118622,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:30:23+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:32:47+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.002000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118767,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:32:48+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:34:47+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505118887,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:35:12+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:37:42+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119062,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:37:43+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002001s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:37:59+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.001000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119079,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:38:00+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:40:38+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.001000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119238,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:40:39+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:43:53+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119433,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003001s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:43:55+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.006000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:44:16+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119456,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.019001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001001s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:44:17+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001001s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:46:51+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119611,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:46:53+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-09-11T16:48:05+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119685,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.021001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001001s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:48:07+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.003000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:48:59+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.002001s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119739,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.001000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001001s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2017-09-11T16:49:01+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-09-11T16:50:46+08:00 ] 127.0.0.1 /admin.php/Release/special
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001001s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `mss_admin_log` [ RunTime:0.003000s ]
+SQL: INSERT INTO `mss_admin_log` (`userid`,`time`,`loginfo`,`userip`) VALUES (1,1505119845,'管理员admin发布了特价旅游','127.0.0.1') [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.001000s ]
+SQL: SELECT * FROM `mss_special` ORDER BY release_time desc  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 256 行.
+NOTIC: [8] Undefined variable: imagesdata D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a040393ece880f1e64a79723b989aa12.php 第 299 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.001001s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2017-09-11T16:50:47+08:00 ] 127.0.0.1 /admin.php/release/respecial/id/1?id=1
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.001000s ]
+INFO: [ route_check ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `mss_special_images` [ RunTime:0.002000s ]
+SQL: SELECT * FROM `mss_special_images` WHERE ( gid=1 )  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined index: home_tilte D:\phpStudy\WWW\shop\Admin\Runtime\Cache\a0eced789cdc649016349cb239bf5f28.php 第 68 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000000s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000000s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.001000s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001000s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+

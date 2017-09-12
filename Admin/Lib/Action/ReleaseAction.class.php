@@ -77,6 +77,7 @@
     		//查询出来要替换的banner配图的相关数据
   			 $data = $banners->where("id=$id")->find();
   			 $this->assign("data",$data);
+			 $this->display();
 
 		}
 		/**
@@ -133,7 +134,7 @@
 
 			$m = M("banners");
 			//执行删除
-			$result=$m->where('id=$id')->delete(); // 删除id为5的用户数据
+			$result=$m->where('id='.$id)->delete(); // 删除id为5的用户数据
 			//判断是否删除成功
 			if($result)
 			{
@@ -224,7 +225,6 @@
 		 */
 		function respecial(){
 
-
 			//获取需要更新的banner配图id
 			$id = trim($_GET['id']);
 		
@@ -292,7 +292,7 @@
 			for($i=0; $i<$numcount; $i++){
 				$data['gid']= $_POST['exhibition_id'];
 				$data['pic'] = $info[$i]['savename'];	
-				$special_images->where('pid=$id')->data($data)->save();
+				$special_images->where('pid='.$id)->data($data)->save();
 			}
 
 
@@ -304,6 +304,9 @@
 		 * 功能：删除特价旅游活动信息
 		 */
 		function delspecial(){
+			
+			
+		
 			//用户只要拥有添加的权限，就具有删除的权限
 			R('Level/sendspecial'); // 权限验证
 
@@ -311,11 +314,10 @@
 			$id = trim($_GET['id']);
 
 			$special = M("special");
-
 			//执行删除
 			$result=$special
-			->join('left join special_images on special.exhibition_id=special_images.pid')
-			->where('id=$id')->delete(); // 删除优惠活动
+				->join('left join special_images on special.exhibition_id=special_images.pid')
+				->where('id='.$id)->delete(); // 删除优惠活动
 			
 			//判断是否删除成功
 			if($result)
@@ -352,7 +354,8 @@
 			//把开始时间,结束时间转化为时间戳
 			$_POST['prostart_time']= strtotime($_POST['start_time']);
 			$_POST['proend_time']= strtotime($_POST['end_time']);
-
+			//设置编码格式为utf-8
+			header("Content-type: text/html; charset=utf-8");
 
 			//实例化类
 			import('ORG.Net.UploadFile'); 
@@ -376,7 +379,7 @@
 			//获取当前时间戳
 			$_POST['project_addtime'] = time();
 			//获取头像图片
-			$_POST['cover_picture'] = $project->photo;
+			$_POST['project_imageurl'] = $project->photo;
 
 			$project->create();
 			$result = $project->add($_POST);
@@ -388,7 +391,7 @@
 			for($i=0; $i<$numcount; $i++){
 				$data['gid']= $result;
 				$data['pic'] = $info[$i]['savename'];	
-				$preject_images->data($data)->add();
+				$project_images->data($data)->add();
 			}
 
 			//存储板块内容
@@ -525,12 +528,12 @@
 			for($i=0; $i<$numcount; $i++){
 				$data['gid']= $_POST['proExhibition_id'];
 				$data['pic'] = $info[$i]['savename'];	
-				$project_images->where('gid=$id')->data($data)->save();
+				$project_images->where('gid='.$id)->data($data)->save();
 			}
 
 
 			// 根据条件保存修改的数据
-			$m->where('id=$id')->data($data)->save();
+			$m->where('id='.$id)->data($data)->save();
 
 		}
 
@@ -551,7 +554,7 @@
 			//执行删除
 			$result=$project
 			->join('left join project_images on project.proExhibition_id=project_images.gid')
-			->where('id=$id')->delete(); // 删除优惠活动
+			->where('id='.$id)->delete(); // 删除优惠活动
 			
 			//判断是否删除成功
 			if($result)
@@ -587,8 +590,8 @@
 				R('Level/sendactivity'); // 权限验证
 
 				//把开始时间,结束时间转化为时间戳
-			$_POST['activity_starttime']= strtotime($_POST['start_time']);
-			$_POST['activity_endtime']= strtotime($_POST['end_time']);
+			$_POST['activity_starttime']= strtotime($_POST['activity_starttime']);
+			$_POST['activity_endtime']= strtotime($_POST['activity_endtime']);
 
 
 			//实例化类
@@ -613,10 +616,10 @@
 			//获取当前时间戳
 			$_POST['activity_addtime'] = time();
 			//获取头像图片
-			$_POST['cover_picture'] = $project->photo;
+			$_POST['cover_picture'] = $activity->photo;
 
-			$project->create();
-			$result = $project->add($_POST);
+			$activity->create();
+			$result = $activity->add($_POST);
 
 			//储存展示窗图片
 			$activity_images = M("activity_images");
@@ -698,8 +701,8 @@
 			$label_name= trim($_GET['label_name']);
 
 			$activity=M("activity");
-			//获取project中标签
-			$activity=$activity->getField('activity_lable',true); // 获取project_lable数组
+			//获取activity中标签
+			$activity=$activity->getField('activity_lable',true); // 获取activity_lable数组
 			//判断是否存在于project标签中是否存在获取选择的标签，如果不存在，进行最新搜索
 			if(in_array($label_name,$activity)){
 
@@ -764,12 +767,12 @@
 			for($i=0; $i<$numcount; $i++){
 				$data['gid']= $_POST['activity_Exid'];
 				$data['pic'] = $info[$i]['savename'];	
-				$activity_images->where('pid=$id')->data($data)->save();
+				$activity_images->where('pid='.$id)->data($data)->save();
 			}
 
 
 			// 根据条件保存修改的数据
-			$m->where('id=$id')->data($data)->save();
+			$m->where('id='.$id)->data($data)->save();
 		}
 		/**
 		 * 函数名：delactivity
@@ -788,7 +791,7 @@
 			//执行删除
 			$result=$activity
 			->join('left join activity_images on activity.activity_Exid=activity_images.gid')
-			->where('id=$id')->delete(); // 删除优惠活动
+			->where('id='.$id)->delete(); // 删除优惠活动
 			
 			//判断是否删除成功
 			if($result)

@@ -1,4 +1,4 @@
-
+<?php if (!defined('THINK_PATH')) exit();?>
 
 <link type="text/css" rel="stylesheet" href="__PUBLIC__/ueditor/themes/default/css/umeditor.min.css">
 
@@ -49,43 +49,43 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">旅行项目内容替换</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<form action="__URL__/replaceproject/<{$data.id}>"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						<form action="__URL__/replaceproject/<?php echo ($data["id"]); ?>"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
-							<div ><input type="text" name="project_title" value="<{$data.project_title}>" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_title" value="<?php echo ($data["project_title"]); ?>" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>封面配图</div>
 							<br>
 							<div>
-							<div id="preview" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/project/<{$data.project_imageurl}>" width="100"></div>
+							<div id="preview" style="width:100px; height: 100px;"><img src="__PUBLIC__/Uploads/project/<?php echo ($data["project_imageurl"]); ?>" width="100"></div>
 							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" value="<{$data.project_imageurl}>" name="project_imageurl" onchange="preview(this)"/></div>
+							<div><input type="file" value="<?php echo ($data["project_imageurl"]); ?>" name="project_imageurl" onchange="preview(this)"/></div>
 							</div>
 							<br>
 							<div>封面显示文字</div>
 							<br>
-							<div ><input type="text" value="<{$data.cover_word}>" name="cover_word" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" value="<?php echo ($data["cover_word"]); ?>" name="cover_word" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>
-							<div ><input type="text" value="<{$data.project_price}>" name="project_price" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" value="<?php echo ($data["project_price"]); ?>" name="project_price" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>出发城市</div>
 							<br>
-							<div ><input type="text" value="<{$data.project_startcity}>" name="project_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" value="<?php echo ($data["project_startcity"]); ?>" name="project_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
 							<div class="demo1">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="start" value="<{$data.prostart_time|date='Y-m-d',###}>">--
-								<input class="inline laydate-icon" name="end_time" id="end" value="<{$data.proend_time|date='Y-m-d',###}>">
+								<input class="inline laydate-icon" name="start_time" id="start" value="<?php echo (date('Y-m-d',$data["prostart_time"])); ?>">--
+								<input class="inline laydate-icon" name="end_time" id="end" value="<?php echo (date('Y-m-d',$data["proend_time"])); ?>">
 								
 							</div>
 							</div>
 							<br>
 							<div>标签</div>
 							<br>
-							<div ><input type="text" value="<{$data.project_lable}>" name="project_lable" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" value="<?php echo ($data["project_lable"]); ?>" name="project_lable" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>展示窗配图</div>
 							<br>
@@ -95,9 +95,7 @@
 									<div style="margin: 5px 5px;">
 									<button id="add" type="button" class="btn btn-primary">添加展示图片</button>
 									</div>
-						<foreach  name="imagesdata" item="row">
-						<img src="__PUBLIC__/Uploads/project/<{$row.pic}>" width="60" height="60">
-						</foreach>
+						<?php if(is_array($imagesdata)): foreach($imagesdata as $key=>$row): ?><img src="__PUBLIC__/Uploads/project/<?php echo ($row["pic"]); ?>" width="60" height="60"><?php endforeach; endif; ?>
 									<div class="divvalue" style="margin-left:200px;">
 										<input  type="file"  name="pic[]" style="width:300px;"/><a href="javascript:void(0)" class="tip-top">&nbsp;&nbsp;<i class="icon-remove"></i></a>
 									</div>
@@ -108,7 +106,7 @@
 							<div>版块内容</div>
 							<br>
 							<div >
-								<textarea  id='gdescription' cols='70' rows='4' value="<{$data.project_content}>" name="gdescription" placeholder='享受美好旅行，从现在开始；'></textarea></div>
+								<textarea  id='gdescription' cols='70' rows='4' value="<?php echo ($data["project_content"]); ?>" name="gdescription" placeholder='享受美好旅行，从现在开始；'></textarea></div>
 						<div class="modal-footer" style="text-align:center;">
 							<button type="submit" class="btn btn-primary" >保存</button>
 						</div>

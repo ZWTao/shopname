@@ -130,36 +130,11 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
-<script>
-
-	$(function(){
-		$(".btn-default").click(function(){
-					var tihuan = $(this).attr("tihuan");
-				 	$.get("__URL__/rebanner/id/"+tihuan,function(data){
-				 		$("#myModal").html('');
-				 		$("#myModal").html(data);
-				 		$("#myModal").html(imagedata);
-				 		$("#myModal").attr("style","display:block;");
-  					});
-
-				})
-		$(".delbanner").click(function(){
-					var delbanner=$(this).attr("delbanner");
-					$.get("__URL__/delbanner/id/"+delbanner,function(data){
-					
-						$(this).parent().remove();
-					});
-		
-		
-		})
-				
-			})
-</script>	
 
 <div id="content">
 	<!-- 顶部右侧快捷操作按钮 开始 -->
 		<div id="content-header">
-			<h1>banner配图</h1>
+			<h1>网站设置</h1>
 			<div class="btn-group">
 				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
 				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
@@ -171,139 +146,161 @@
         <!-- 顶部面包屑导航 开始 -->
 		<div id="breadcrumb">
 			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-			<a href="__URL__/banner" title="返回banner配图" class="tip-bottom"> 发布内容</a>
-			<a href="#" class="current">发布主页banner配图</a>
+			<a href="__URL__/listsConfig" title="返回网站配置" class="tip-bottom"> 网站设置</a>
+			<a href="#" class="current"> 配置列表</a>
 		</div>
 		<!-- 顶部面包屑导航 结束 -->
 		<!-- 主体区域 -->
 		<div class="container-fluid">
-			<!-- <div class="row-fluid">
-				<div class="span3 offset9" >
-					<button class="btn"> 添加替换banner</button>
-				</div>
-			</div> -->
-<div class="row-fluid">
-<div class="span12">
-	<!-- 组件盒子 开始 -->
-	<div class="widget-box">
-		<!-- 组件标题区域 -->
-		<div class="widget-title"><h4>替换/添加banner图</h4></div>
-		<!-- 组件内容区域 -->
-		<div class="widget-content nopadding">
-			<table class="table table-bordered data-table" height="275px">
-				<!-- 表头字段区域 -->
-				<thead>
-				</thead>
-				<!-- 表格主体数据区域 -->
-				<tbody>
-				<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr >
-						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/banners/<?php echo ($vo["banner_url"]); ?>" width="420"></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["banner_name"]); ?></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>"  data-toggle="modal" data-target="#myModal">替换</button></div></td>
-						<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><button type="button" class="delbanner" delbanner="<?php echo ($vo["id"]); ?>" class="btn btn-default">删除</button></td>
-					
-					</tr><?php endforeach; endif; ?>
-					<tr height="100">
-						<td style="text-align:center;vertical-align:middle;font-size:175px;font-family:'宋体';" data-toggle="modal" data-target="#myModal">+</td>
-						<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证1920*440</td>
-					</tr>
-
-				
-				</tbody>
-			</table> 
-			<!--添加banner的模态框-->
-			<div class="col-md-offset-3 col-md-5">
-			<div class="row checkbox">
-				<div class="col-md-12">
-					<label>
-		 				<form action="__URL__/insbanner"  method="post"  enctype="multipart/form-data" class="form-horizontal">
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title" id="myModalLabel" style="text-align:center;">添加banner图片</h4>
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<div class="widget-box">
+					   	<div class="widget-title">
+					        <ul class="nav nav-tabs">
+					            <li class="active"><a data-toggle="tab" href="#tab1">店铺信息</a></li>
+					            <li><a data-toggle="tab" href="#tab2">站点设置</a></li>
+					            <li><a data-toggle="tab" href="#tab3">其它配置（预留）</a></li>
+					        </ul>
+					    </div>
+					    <div class="widget-content tab-content">
+					    	<!-- 选项卡一 店铺信息 开始 -->
+					        <div id="tab1" class="tab-pane active">
+								<!-- 编辑表单 -->
+								<form action="__URL__/updaConfig" method="post" enctype="multipart/form-data" class="form-horizontal">
+									<div class="control-group">
+										<label class="control-label">店铺名称：</label>
+										<div class="controls"><input type="text" name="shopname" value="<?php echo ($config["shopname"]); ?>" /></div>
 									</div>
-									<div class="modal-body">
-										<table  width="530px">
-										<tr >
-										<td colspan="2" id="preview"></td>
-										</tr>
-										<tr>
-										
-										<td ><input type="file" name="banpic" onchange="preview(this)"/></td>
-										<td style="width:320px;height:40px;"><input type="text" name="banner_name"></td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:left;">指定指向路径</td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:center;vertical-align:middle;"> <div><input type="text" name="loadurl" style="width:430px;height:30px;"/></div></td>
-										</tr>
-										</table>
+									<div class="control-group">
+										<label class="control-label">店铺标题：</label>
+										<div class="controls"><input type="text" name="shoptitle" value="<?php echo ($config["shoptitle"]); ?>" /><span class="help-block">将显示在浏览器标题栏的文字。</span></div>
 									</div>
-									<div class="modal-footer" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">保存</button>   
+									<div class="control-group">
+										<label class="control-label">店铺关键字：</label>
+										<div class="controls"><input type="text" name="keywords" value="<?php echo ($config["keywords"]); ?>" /><span class="help-block">以“,”分隔，推荐3-5个。</span></div>
 									</div>
-								</div>
-							</div>
-						</div>
-						</form>
-					</label>
+									<div class="control-group">
+										<label class="control-label">店铺描述：</label>
+										<div class="controls">
+											<textarea name="description" id="" ><?php echo ($config["description"]); ?></textarea><span class="help-block">突出店铺关键字，推荐150字左右。</span>
+										<!-- <input type="text" name="description" value="<?php echo ($config["2"]["content"]); ?>"/> -->
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">管理员邮箱：</label>
+										<div class="controls"><input type="text" name="aemail" value="<?php echo ($config["aemail"]); ?>" /></div>
+									</div>										
+									<div class="control-group">
+										<label class="control-label">公司法人姓名：</label>
+										<div class="controls"><input type="text" name="shopowner" value="<?php echo ($config["shopowner"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">身份证号：</label>
+										<div class="controls"><input type="text" name="idcard" value="<?php echo ($config["idcard"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">电话号码：</label>
+										<div class="controls"><input type="text" name="cellphone" value="<?php echo ($config["cellphone"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">微博地址：</label>
+										<div class="controls"><input type="text" name="weibo" value="<?php echo ($config["weibo"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">公司地址：</label>
+										<div class="controls"><input type="text" name="address" value="<?php echo ($config["address"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">营业执照：</label>
+										<div class="controls"><input type="file" name="blicense" /><a href="__PUBLIC__/Uploads/config/<?php echo ($config["blicense"]); ?>" title="点击有惊喜"><?php echo ($config["blicense"]); ?></a></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">公司所在地：</label>
+										<div class="controls"><input type="text" name="caddress" value="<?php echo ($config["caddress"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">网站Logo：</label>
+										<div class="controls"><input type="file" name="logo" /><a href="__PUBLIC__/Uploads/config/<?php echo ($config["logo"]); ?>" title="点击有惊喜"><?php echo ($config["logo"]); ?></a></div>
+									</div>
+									<!-- 提交提交按钮 -->
+									<div class="form-actions">
+										<button type="submit" class="btn btn-primary">保存</button>
+									</div>
+								</form>
+					        </div>
+					        <!-- 选项卡一 店铺信息 结束 -->
+					        <!-- 选项卡二 站点设置 开始 -->
+					        <div id="tab2" class="tab-pane">
+								<!-- 编辑表单 -->
+								<form action="__URL__/updaConfig" method="post" enctype="multipart/form-data" class="form-horizontal">
+									<div class="control-group">
+										<label class="control-label">备案信息：</label>
+										<div class="controls"><input type="text" name="icpnum" value="<?php echo ($config["icpnum"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">统计代码：</label>
+										<div class="controls"><textarea name="stacode" id="" ><?php echo ($config["stacode"]); ?></textarea></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">商品默认图片：</label>
+										<div class="controls"><input type="file" name="goodsimg" /><a href="__PUBLIC__/Uploads/config/<?php echo ($config["goodsimg"]); ?>" title="点击有惊喜"><?php echo ($config["goodsimg"]); ?></a></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">用户默认头像：</label>
+										<div class="controls"><input type="file" name="userpic" /><a href="__PUBLIC__/Uploads/config/<?php echo ($config["userpic"]); ?>" title="点击有惊喜"><?php echo ($config["userpic"]); ?></a></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">水印图片：</label>
+										<div class="controls"><input type="file" name="wimg" /><a href="__PUBLIC__/Uploads/config/<?php echo ($config["wimg"]); ?>" title="点击有惊喜"><?php echo ($config["wimg"]); ?></a></div>
+									</div>	
+									<div class="control-group">
+										<label class="control-label">水印位置：</label>
+										<div class="controls">
+											<select style="width: 80px" name="wposition">
+												<option value="1" <?php if($config['wposition'] == 1): ?>selected<?php endif; ?> >无</option>
+												<option value="2" <?php if($config['wposition'] == 2): ?>selected<?php endif; ?>>左上</option>
+												<option value="3" <?php if($config['wposition'] == 3): ?>selected<?php endif; ?>>右上</option>
+												<option value="4" <?php if($config['wposition'] == 4): ?>selected<?php endif; ?>>居中</option>
+												<option value="5" <?php if($config['wposition'] == 5): ?>selected<?php endif; ?>>左下</option>
+												<option value="6" <?php if($config['wposition'] == 6): ?>selected<?php endif; ?>>右下</option>
+											</select>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">水印透明度：</label>
+										<div class="controls"><input type="text" name="walpha" value="<?php echo ($config["walpha"]); ?>" /><span class="help-block">请填写为0-100的整数,如填入80，表示透明度为80％</span></div>
+									</div>										
+									<div class="control-group">
+										<label class="control-label">商品货号前缀：</label>
+										<div class="controls"><input type="text" name="gnum_prefix" value="<?php echo ($config["gnum_prefix"]); ?>" /></div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">是否开启新订单提醒：</label>
+										<div class="controls">
+											<label><input type="radio" name="isnotice" value="1" <?php if($config['isnotice'] == 1): ?>checked="true"<?php endif; ?> /> 是</label>
+											<label><input type="radio" name="isnotice" value="2" <?php if($config['isnotice'] == 2): ?>checked="true"<?php endif; ?> /> 否</label>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label">是否开启会员邮箱验证：</label>
+										<div class="controls">
+											<label><input type="radio" name="isvemail" value="1" <?php if($config['isvemail'] == 1): ?>checked="true"<?php endif; ?> /> 是</label>
+											<label><input type="radio" name="isvemail" value="2" <?php if($config['isvemail'] == 2): ?>checked="true"<?php endif; ?> /> 否</label>
+										</div>
+									</div>
+									<!-- 提交提交按钮 -->
+									<div class="form-actions">
+										<button type="submit" class="btn btn-primary">保存</button>
+									</div>
+								</form>
+					        </div>
+					        <div id="tab3" class="tab-pane">This is a Tab Three Content</div>
+					    </div>                            
+					</div>
+					<!-- 组件盒子 结束 -->
 				</div>
 			</div>
-		</div> <span id="tip"> </span>
-			<!--添加banner的模态框-->
-			<!--更新的banner配图的模态框-->
-			<!-- <div class="col-md-offset-3 col-md-5">
-			<div class="row checkbox">
-				<div class="col-md-12">
-					<label>
-					<form action="__URL__/replacebanner/id/<?php echo ($vo["id"]); ?>"  method="post" enctype="multipart/form-data" class="form-horizontal">
-						<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title" id="myModalLabel" style="text-align:center;">更新的banner图片</h4>
-									</div>
-									<?php if(is_array($data)): foreach($data as $key=>$vo): ?><div class="modal-body"> </div>
-										<table width="530px">
-										<tr>
-										<td colspan="2" id="preview"><img src="__PUBLIC__/Uploads/banners/<?php echo ($vo["banner_url"]); ?>"></td>
-										</tr>
-										<tr>
-										<td ><input type="file" name="banpic" onchange="preview(this)"/></td>
-										<td style="width:320px;height:40px;"><input type="text" name="banner_name" value="<?php echo ($vo["banner_name"]); ?>"></td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:left;">指定指向路径</td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:center;vertical-align:middle;"> <div><input type="text" name="loadurl" value="<?php echo ($vo["point_url"]); ?>" style="width:430px;height:30px;"/></div></td>
-										</tr><?php endforeach; endif; ?>
-										</table>
-									</div>
-									<div class="modal-footer" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">保存</button>   
-									</div>
-								</div>
-							</div>
-						</div>
-						</form>
-					</label>
-				</div>
-			</div> -->
-		</div> <span id="tip"> </span>
-			<!--更新的banner配图的模态框-->
-		</div>
-	</div>
-	<!-- 组件盒子 结束 -->
-
-</div>
-</div>
-
-
 
 <!-- 包含底部 -->
 			
@@ -341,14 +338,3 @@
 
 </body>
 </html>
-<!--<script>
-/*ajax请求要改变的banner配图*/
-			$("#tihaun").click(function(){
-
-					var tihaun = $(this).attr("tihaun");
-					var url = "__URL__/replacebanner/id/"+tihaun;
-					var obj = $(this);
-
-		})
-
-</script>-->

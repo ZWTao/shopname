@@ -114,15 +114,15 @@
                         <li><a href="__APP__/Release/activity">热门活动发布</a></li>
                     </ul>
                 </li>
-              <!--   <li class="submenu" id="tmpl">
-                    <a href="#"><i class="icon icon-bookmark"></i> <span>发布内容</span></a>
+              <li class="submenu" id="tmpl">
+                    <a href="#"><i class="icon icon-bookmark"></i> <span>套餐管理</span></a>
                     <ul>
-                        <li><a href="__APP__/Release/banner">发布主页banner配图</a></li>
-                         <li><a href="__APP__/Release/special">特价旅行活动发布</a></li>
-                        <li><a href="__APP__/Release/project">旅行项目发布</a></li>
-                        <li><a href="__APP__/Release/activity">热门活动发布</a></li>
+                        <li><a href="__APP__/Package/lists">模版列表</a></li>
+                        <li><a href="__APP__/Packageel/set">模版设置</a></li>
+                        <li><a href="">在线编辑</a></li>
+                        <li><a href="__APP__/Package/lists">邮件模板</a></li>
                     </ul>
-                </li> -->
+                </li>
                 <li id="count"><a href=""><i class="icon icon-signal"></i> <span>报表统计</span></a></li>
                 <li id="config"><a href="__APP__/Config/listsConfig"><i class="icon icon-cog"></i> <span>网站设置</span></a></li>
                     <!-- 基本信息、自定义导航、系统公告 ... -->
@@ -157,6 +157,22 @@
 				$('.tip-top').live('click', function(){
 			 		$(this).parent().remove();
 				});
+				$('#label_name').change(function () {
+					var select = document.getElementById('label_name');
+
+					$.get("__URL__/seachlableproject/label_name/"+select.value,function(data,data){
+				 		
+  		});
+			
+})
+				$('#keyword').click(function () {
+					
+                 var element = document.getElementById("seachword"); 
+
+                  $.get("__URL__/seachKeyproject/",{element:element.value},function(data,data){
+
+                  });
+})
 		})
 </script>
 <div id="content">
@@ -193,20 +209,19 @@
 						<div class="widget-title">
 						<h4 style="margin-left:15px ;">热门旅游发布</h4>
 						<div>
-						<input type="text" class="icon" style="margin-top:-45px;margin-left:1045px;" name="add" id="add" value="添加关键字"><img style="margin-top:-45px; margin-left:5px; " width="30px" height="30px" src="__PUBLIC__/admin/img/z15.png" ></div>
+						<input type="text" class="icon" style="margin-top:-45px;margin-left:1045px;" name="seachword" id="seachword" value="添加关键字"><img id ="keyword" style="margin-top:-45px; margin-left:5px; " width="30px" height="30px" src="__PUBLIC__/admin/img/z15.png" ></div>
 						</div>	
 						<div class="widget-title" style="margin-top:5px; ">
-						<select style="text-align: center;margin-left:10px ;" >
-                             <option value ="guoji">国&nbsp;&nbsp;&nbsp;&nbsp;际</option>
-                             <option value ="dongnan">东&nbsp;&nbsp;&nbsp;&nbsp;南</option>
-                             <option value="xinan">西&nbsp;&nbsp;&nbsp;&nbsp;南</option>
-                             <option value="dongbei">东&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value ="huabei">华&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value ="xibei">西&nbsp;&nbsp;&nbsp;&nbsp;北</option>
-                             <option value="huazhong">华&nbsp;&nbsp;&nbsp;&nbsp;中</option>
-                             <option value="zuixin">最&nbsp;&nbsp;&nbsp;&nbsp;新</option>
+						<select id="label_name" style="text-align: center;margin-left:10px ;" >
+                             <option value ="国际">国&nbsp;&nbsp;&nbsp;&nbsp;际</option>
+                             <option value ="东南">东&nbsp;&nbsp;&nbsp;&nbsp;南</option>
+                             <option value="西南">西&nbsp;&nbsp;&nbsp;&nbsp;南</option>
+                             <option value="东北">东&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value ="华北">华&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value ="西北">西&nbsp;&nbsp;&nbsp;&nbsp;北</option>
+                             <option value="华中">华&nbsp;&nbsp;&nbsp;&nbsp;中</option>
+                             <option value="最新">最&nbsp;&nbsp;&nbsp;&nbsp;新</option>
                         </select> 
-						
 						</div>	
 
 						<!-- 组件内容区域 -->
@@ -217,12 +232,14 @@
 								</thead>
 								<!-- 表格主体数据区域 -->
 								<tbody>
-								<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr>
+							
+									<tr>
 										<?php if(is_array($data)): foreach($data as $key=>$vo): ?><td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/activity/<?php echo ($vo["banner_url"]); ?>" width="420"></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo (date("Y-m-d",$vo["upload_time"])); ?></td>
-										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" <a href="__URL__/rebanner/id/<?php echo ($vo["id"]); ?>" data-toggle="modal" data-target="#replaceModal">替换</button></div></td>
+										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>" data-toggle="modal" data-target="#myModal">替换</button></div></td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><button type="button" class="btn btn-default"><a href="__URL__/delactivity/id/<?php echo ($vo["id"]); ?>"></a>删除</button></div></td><?php endforeach; endif; ?>
-									</tr><?php endforeach; endif; ?>
+									</tr>
+								
 									<tr >
 										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal">+</td>
 										<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证300*300</td>
@@ -235,7 +252,7 @@
 				</div>
 			</div>
 <!--替换活动-->
-			<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<!-- <div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -316,7 +333,7 @@
 					</div>
 				</div>
 			</div>
-			</div>
+			</div> -->
 <!--替换活动-->
 <!--添加活动-->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -327,51 +344,39 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">热门旅游发布</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<form action="__URL__/inspecial"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						<form action="__URL__/insactivity"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
-							<div ><input type="text" name="title_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_title" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>封面配图</div>
 							<br>
 							<div>
 							<div id="preview" style="width:100px; height: 100px;"></div>
-							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" name="cover_picture" onchange="preview(this)"/></div>
+							<div style="text-align:center;vertical-align:middle;">图片需为280*500</div>
+							<div><input type="file" name="activity_picurl" onchange="preview(this)"/></div>
 							</div>
-							<br>
-							<div>主页标题</div>
-							<br>
-							<div ><input type="text" name="home_tilte" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页价格</div>
-							<br>
-							<div ><input type="text" name="home_price" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页项目简介</div>
-							<br>
-							<div ><input type="text" name="project_profile" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>
-							<div ><input type="text" name="special_price" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_price" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>出发城市</div>
 							<br>
-							<div ><input type="text" name="start_city" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
 							<div class="demo1">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="start_time" value="2017-8-25更新">--
-								<input class="inline laydate-icon" name="end_time" id="end_time" value="2017-8-25更新">
+								<input class="inline laydate-icon" name="activity_starttime" id="start_time" value="2017-8-25更新">--
+								<input class="inline laydate-icon" name="activity_endtime" id="end_time" value="2017-8-25更新">
 								
 							</div>
 							</div>
 							<br>
 							<div>标签</div>
 							<br>
-							<div ><input type="text" name="label_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_lable" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>展示窗配图</div>
 							<br>
@@ -392,7 +397,7 @@
 							<div>版块内容</div>
 							<br>
 							<div >
-								<textarea  id='gdescription1' cols='70' rows='4' name="gdescription" placeholder='享受美好旅行，从现在开始；'></textarea></div>
+								<textarea  id='gdescription1' cols='70' rows='4' name="activity_content" placeholder='享受美好旅行，从现在开始；'></textarea></div>
 						<div class="modal-footer" style="text-align:center;">
 							<button type="submit" class="btn btn-primary" >保存</button>
 						</div>

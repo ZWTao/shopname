@@ -174,10 +174,20 @@
                   $.get("__URL__/seachKeyproject/",{element:element.value},function(data,data){
 
                   });
-					
-					
-   				
-})
+			
+			})
+			
+  					$(".btn-default").click(function(){
+					var tihuan = $(this).attr("tihuan");
+				 	$.get("__URL__/reproject/id/"+tihuan,{id:tihuan},function(data){
+				 		$("#userModal").html('');
+				 		$("#userModal").html(data);
+				 		$("#userModal").html(imagedata);
+				 		$("#userModal").attr("style","display:block;");
+  					});
+
+				})
+
 		})
 </script>
 <div id="content">
@@ -239,13 +249,13 @@
 								<!-- 表格主体数据区域 -->
 								<tbody>
 								<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr>
-										<th> style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" width="220"></th>
+										<td style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/project/<?php echo ($vo["project_imageurl"]); ?>" width="220"></th>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["title_name"]); ?></td>
-										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><a href="__URL__/reproject/id/<?php echo ($vo["id"]); ?>" ><button type="submit" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></a></div> </td>
+										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><a href="__URL__/reproject/id/<?php echo ($vo["id"]); ?>" ><button type="submit" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></a></div> </td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><a href="__URL__/delproject/id/<?php echo ($vo["id"]); ?>"><button type="button" class="btn btn-default">删除</button></a></div></td>
 									</tr><?php endforeach; endif; ?>
-									<tr >
-										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal">+</td>
+									<tr height="100" >
+										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#userModal">+</td>
 										<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证300*300</td>
 								
 								</tbody>
@@ -256,7 +266,7 @@
 				</div>
 			</div>
 				<!--替换旅游项目-->
-			<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<!-- <div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -338,10 +348,10 @@
 				</div>
 			</div>
 
-			</div>
+			</div> -->
 			<!--替换旅游项目-->
 		<!--发布旅游项目-->
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<div class="modal fade" id="userModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -349,41 +359,33 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">旅行项目发布</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<form action="__URL__/inspecial"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						<form action="__URL__/insproject"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
-							<div ><input type="text" name="title_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_title" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>封面配图</div>
 							<br>
 							<div>
 							<div id="preview" style="width:100px; height: 100px;"></div>
 							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" name="cover_picture" onchange="preview(this)"/></div>
+							<div><input type="file" name="project_imageurl" onchange="preview(this)"/></div>
 							</div>
 							<br>
-							<div>主页标题</div>
+							<div>封面显示文字</div>
 							<br>
-							<div ><input type="text" name="home_tilte" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页价格</div>
-							<br>
-							<div ><input type="text" name="home_price" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页项目简介</div>
-							<br>
-							<div ><input type="text" name="project_profile" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="cover_word" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>
-							<div ><input type="text" name="special_price" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_price" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>出发城市</div>
 							<br>
-							<div ><input type="text" name="start_city" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
-							<div class="demo1">
+							<div class="demo">
 								<h3>出游日期</h3>
 								<input class="inline laydate-icon" name="start_time" id="start_time" value="2017-8-25更新">--
 								<input class="inline laydate-icon" name="end_time" id="end_time" value="2017-8-25更新">
@@ -393,7 +395,7 @@
 							<br>
 							<div>标签</div>
 							<br>
-							<div ><input type="text" name="label_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="project_lable" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>展示窗配图</div>
 							<br>

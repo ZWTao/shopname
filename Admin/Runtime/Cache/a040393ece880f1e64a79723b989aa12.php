@@ -162,6 +162,15 @@
   					});
 
 				})
+				$(document).on("click",".delspecial",function () {
+                 
+					var _this=$(this);
+					var delspecial=$(this).attr("delspecial");
+					$.get("__URL__/delspecial/id/"+delspecial,function(data){
+						_this.parent().parent().remove();
+					
+					});
+				 })
 			
 		})
 	
@@ -201,7 +210,7 @@
 						<div class="widget-title"><h4>特价旅行活动发布</h4></div> 
 						<!-- 组件内容区域 -->
 						<div class="widget-content nopadding">
-							<table class="table table-bordered data-table" height="375px">
+							<table class="table table-bordered data-table" >
 								<!-- 表头字段区域 -->
 								<thead>
 								</thead>
@@ -211,9 +220,9 @@
 										<td style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<?php echo ($vo["cover_picture"]); ?>" width="220"></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["title_name"]); ?></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="submit" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></div> </td>
-										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><button type="button" id="delspecial" class="btn btn-default"><a href="__URL__/delspecial/id/<?php echo ($vo["id"]); ?>">删除</a></button></div></td>
+										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><button type="submit" class="delspecial" delspecial="<?php echo ($vo["id"]); ?>" >删除</button></td>
 									</tr><?php endforeach; endif; ?>
-									<tr >
+									<tr height="100">
 										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#userModal">+</td>
 										<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证375*375</td>
 									</tr>
@@ -342,7 +351,7 @@
 							<br>
 							<div>主页标题</div>
 							<br>
-							<div ><input type="text" name="home_tilte" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="home_title" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>主页价格</div>
 							<br>
@@ -350,7 +359,7 @@
 							<br>
 							<div>主页项目简介</div>
 							<br>
-							<div ><input type="text" name="project_profile" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="special_profile" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>

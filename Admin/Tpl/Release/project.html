@@ -120,14 +120,14 @@
 								<tbody>
 								<foreach name="data" item="vo">
 									<tr>
-										<th> style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/special/<{$vo.cover_picture}>" width="220"></th>
+										<td style="width:430px;height: 220px;font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/project/<{$vo.project_imageurl}>" width="220"></th>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><{$vo.title_name}></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><a href="__URL__/reproject/id/<{$vo.id}>" ><button type="submit" id="tihuan" tihuan="<{$vo.id}>" class="btn btn-default" data-toggle="modal" data-target="#userModal"> 替换</button></a></div> </td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><a href="__URL__/delproject/id/<{$vo.id}>"><button type="button" class="btn btn-default">删除</button></a></div></td>
 									</tr>
 									</foreach>
-									<tr >
-										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal">+</td>
+									<tr height="100" >
+										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#userModal">+</td>
 										<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证300*300</td>
 								
 								</tbody>
@@ -231,7 +231,7 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">旅行项目发布</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<form action="__URL__/inspecial"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						<form action="__URL__/insproject"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
 							<div ><input type="text" name="project_title" style="width:500px; height:30px; border:1px solid black;"></div>
@@ -257,10 +257,10 @@
 							<div ><input type="text" name="project_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
-							<div class="demo1">
+							<div class="demo">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="prostart_time" value="2017-8-25更新">--
-								<input class="inline laydate-icon" name="end_time" id="proend_time" value="2017-8-25更新">
+								<input class="inline laydate-icon" name="start_time" id="start_time" value="2017-8-25更新">--
+								<input class="inline laydate-icon" name="end_time" id="end_time" value="2017-8-25更新">
 								
 							</div>
 							</div>
@@ -288,7 +288,7 @@
 							<div>版块内容</div>
 							<br>
 							<div >
-								<textarea  id='gdescription1' cols='70' rows='4' name="gdescription1" placeholder='享受美好旅行，从现在开始；'></textarea></div>
+								<textarea  id='gdescription1' cols='70' rows='4' name="project_content" placeholder='享受美好旅行，从现在开始；'></textarea></div>
 						<div class="modal-footer" style="text-align:center;">
 							<button type="submit" class="btn btn-primary" >保存</button>
 						</div>

@@ -130,36 +130,11 @@
             </ul>
         </div>
         <!-- 侧边菜单栏结束 -->
-<script>
-
-	$(function(){
-		$(".btn-default").click(function(){
-					var tihuan = $(this).attr("tihuan");
-				 	$.get("__URL__/rebanner/id/"+tihuan,function(data){
-				 		$("#myModal").html('');
-				 		$("#myModal").html(data);
-				 		$("#myModal").html(imagedata);
-				 		$("#myModal").attr("style","display:block;");
-  					});
-
-				})
-		$(".delbanner").click(function(){
-					var delbanner=$(this).attr("delbanner");
-					$.get("__URL__/delbanner/id/"+delbanner,function(data){
-					
-						$(this).parent().remove();
-					});
-		
-		
-		})
-				
-			})
-</script>	
 
 <div id="content">
 	<!-- 顶部右侧快捷操作按钮 开始 -->
 		<div id="content-header">
-			<h1>banner配图</h1>
+			<h1>友情链接</h1>
 			<div class="btn-group">
 				<a class="btn btn-large tip-bottom" title="订单管理"><i class="icon-file"></i></a>
 				<a class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
@@ -171,139 +146,58 @@
         <!-- 顶部面包屑导航 开始 -->
 		<div id="breadcrumb">
 			<a href="__APP__" title="返回首页" class="tip-bottom"><i class="icon-home"></i> 首页</a>
-			<a href="__URL__/banner" title="返回banner配图" class="tip-bottom"> 发布内容</a>
-			<a href="#" class="current">发布主页banner配图</a>
+			<a href="__URL__/lists" title="返回用户管理" class="tip-bottom"> 友情链接</a>
+			<a href="#" class="current"> 列表</a>
 		</div>
 		<!-- 顶部面包屑导航 结束 -->
 		<!-- 主体区域 -->
 		<div class="container-fluid">
-			<!-- <div class="row-fluid">
-				<div class="span3 offset9" >
-					<button class="btn"> 添加替换banner</button>
-				</div>
-			</div> -->
-<div class="row-fluid">
-<div class="span12">
-	<!-- 组件盒子 开始 -->
-	<div class="widget-box">
-		<!-- 组件标题区域 -->
-		<div class="widget-title"><h4>替换/添加banner图</h4></div>
-		<!-- 组件内容区域 -->
-		<div class="widget-content nopadding">
-			<table class="table table-bordered data-table" height="275px">
-				<!-- 表头字段区域 -->
-				<thead>
-				</thead>
-				<!-- 表格主体数据区域 -->
-				<tbody>
-				<?php if(is_array($data)): foreach($data as $key=>$vo): ?><tr >
-						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/banners/<?php echo ($vo["banner_url"]); ?>" width="420"></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><?php echo ($vo["banner_name"]); ?></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" id="tihuan" tihuan="<?php echo ($vo["id"]); ?>"  data-toggle="modal" data-target="#myModal">替换</button></div></td>
-						<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><button type="button" class="delbanner" delbanner="<?php echo ($vo["id"]); ?>" class="btn btn-default">删除</button></td>
-					
-					</tr><?php endforeach; endif; ?>
-					<tr height="100">
-						<td style="text-align:center;vertical-align:middle;font-size:175px;font-family:'宋体';" data-toggle="modal" data-target="#myModal">+</td>
-						<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证1920*440</td>
-					</tr>
-
-				
-				</tbody>
-			</table> 
-			<!--添加banner的模态框-->
-			<div class="col-md-offset-3 col-md-5">
-			<div class="row checkbox">
-				<div class="col-md-12">
-					<label>
-		 				<form action="__URL__/insbanner"  method="post"  enctype="multipart/form-data" class="form-horizontal">
-						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title" id="myModalLabel" style="text-align:center;">添加banner图片</h4>
-									</div>
-									<div class="modal-body">
-										<table  width="530px">
-										<tr >
-										<td colspan="2" id="preview"></td>
-										</tr>
-										<tr>
-										
-										<td ><input type="file" name="banpic" onchange="preview(this)"/></td>
-										<td style="width:320px;height:40px;"><input type="text" name="banner_name"></td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:left;">指定指向路径</td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:center;vertical-align:middle;"> <div><input type="text" name="loadurl" style="width:430px;height:30px;"/></div></td>
-										</tr>
-										</table>
-									</div>
-									<div class="modal-footer" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">保存</button>   
-									</div>
-								</div>
-							</div>
+			<div class="row-fluid">
+				<div class="span12">
+					<!-- 组件盒子 开始 -->
+					<div class="widget-box">
+						<!-- 组件标题区域 -->
+						<div class="widget-title"><h5>友情连接列表</h5>
+							<h5><a href="__URL__/add">添加友链</a></h5>
 						</div>
-						</form>
-					</label>
+						<!-- 组件内容区域 -->
+						<div class="widget-content nopadding">
+							<table class="table table-bordered data-table">
+								<!-- 表头字段区域 -->
+								<thead>
+									<tr >
+										<th style="font-size:11px">名称</th>
+										<th>地址</th>
+										<th>描述信息</th>
+										<th>Logo</th>
+										<th>排序</th>
+										<th>显示方式</th>
+										<th>打开方式</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<!-- 表格主体数据区域 -->
+								<tbody>
+								<?php if(is_array($data)): foreach($data as $key=>$v): ?><tr>
+										<td><?php echo ($v["lname"]); ?></td>
+										<td><?php echo ($v["url"]); ?></td>
+										<td><?php echo ($v["description"]); ?></td>
+										<td><img src="__PUBLIC__/Uploads/Links/<?php echo ($v["logo"]); ?>" alt="" width="100" height="40"></td>
+										<td><?php echo ($v["ordernum"]); ?></td>
+										<td><?php if($v["showtype"] == 2): ?>文字<?php endif; if($v["showtype"] == 1): ?>图片<?php endif; ?></td>
+										<td><?php echo ($v["target"]); ?></td>
+										<td class="taskOptions">
+									    	<a href="__URL__/upda/id/<?php echo ($v["id"]); ?>" class="tip-top" data-original-title="编辑"><i class="icon-pencil"></i></a>&nbsp;&nbsp;
+									    	<a href="__URL__/del/id/<?php echo ($v["id"]); ?>" class="tip-top" data-original-title="删除"><i class="icon-remove"></i></a>
+										</td>
+									</tr><?php endforeach; endif; ?>
+								</tbody>
+							</table>  
+						</div>
+					</div>
+					<!-- 组件盒子 结束 -->
 				</div>
 			</div>
-		</div> <span id="tip"> </span>
-			<!--添加banner的模态框-->
-			<!--更新的banner配图的模态框-->
-			<!-- <div class="col-md-offset-3 col-md-5">
-			<div class="row checkbox">
-				<div class="col-md-12">
-					<label>
-					<form action="__URL__/replacebanner/id/<?php echo ($vo["id"]); ?>"  method="post" enctype="multipart/form-data" class="form-horizontal">
-						<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-							<div class="modal-dialog">
-								<div class="modal-content">
-									<div class="modal-header">
-										<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-										<h4 class="modal-title" id="myModalLabel" style="text-align:center;">更新的banner图片</h4>
-									</div>
-									<?php if(is_array($data)): foreach($data as $key=>$vo): ?><div class="modal-body"> </div>
-										<table width="530px">
-										<tr>
-										<td colspan="2" id="preview"><img src="__PUBLIC__/Uploads/banners/<?php echo ($vo["banner_url"]); ?>"></td>
-										</tr>
-										<tr>
-										<td ><input type="file" name="banpic" onchange="preview(this)"/></td>
-										<td style="width:320px;height:40px;"><input type="text" name="banner_name" value="<?php echo ($vo["banner_name"]); ?>"></td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:left;">指定指向路径</td>
-										</tr>
-										<tr>
-										<td colspan="2" style="text-align:center;vertical-align:middle;"> <div><input type="text" name="loadurl" value="<?php echo ($vo["point_url"]); ?>" style="width:430px;height:30px;"/></div></td>
-										</tr><?php endforeach; endif; ?>
-										</table>
-									</div>
-									<div class="modal-footer" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">保存</button>   
-									</div>
-								</div>
-							</div>
-						</div>
-						</form>
-					</label>
-				</div>
-			</div> -->
-		</div> <span id="tip"> </span>
-			<!--更新的banner配图的模态框-->
-		</div>
-	</div>
-	<!-- 组件盒子 结束 -->
-
-</div>
-</div>
-
-
 
 <!-- 包含底部 -->
 			
@@ -341,14 +235,3 @@
 
 </body>
 </html>
-<!--<script>
-/*ajax请求要改变的banner配图*/
-			$("#tihaun").click(function(){
-
-					var tihaun = $(this).attr("tihaun");
-					var url = "__URL__/replacebanner/id/"+tihaun;
-					var obj = $(this);
-
-		})
-
-</script>-->

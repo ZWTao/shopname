@@ -16,6 +16,12 @@ class IndexAction extends Action {
 		}
 
   	function index(){
+			
+			//实例化banner图
+			$m = M("banners");
+			//查询所有的banner配图
+			$databanner = $m->order('upload_time desc')->select();
+
     		/**(1)获取商品分类数据，分类类表显示的时候合并显示为两级分类
     		即顶级分类为最大分类，其下面的所有子分类都处理成二级分类显示
     		*/
@@ -86,6 +92,8 @@ class IndexAction extends Action {
 		$this->assign("tdata",$tdata);
 		//新品上架商品
 		$this->assign("zdata",$zdata);
+		//banner配图部分
+		$this->assign('databanner',$databanner);
 		R('Base/header');
 		R('Base/footer');
 		$this->display();

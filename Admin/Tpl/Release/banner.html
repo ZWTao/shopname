@@ -1,6 +1,29 @@
 <!-- 包含顶部 -->
 <include file="./Admin/Tpl/Index/header.html" />
+<script>
 
+	$(function(){
+		$(".btn-default").click(function(){
+					var tihuan = $(this).attr("tihuan");
+				 	$.get("__URL__/rebanner/id/"+tihuan,function(data){
+				 		$("#myModal").html('');
+				 		$("#myModal").html(data);
+				 		$("#myModal").html(imagedata);
+				 		$("#myModal").attr("style","display:block;");
+  					});
+
+				})
+		$(".delbanner").click(function(){
+					var delbanner=$(this).attr("delbanner");
+					$.get("__URL__/delbanner/id/"+delbanner,function(data){
+						$(this).parent().parent().remove();
+					});
+		
+		
+		})
+				
+			})
+</script>	
 
 <div id="content">
 	<!-- 顶部右侧快捷操作按钮 开始 -->
@@ -42,16 +65,16 @@
 				</thead>
 				<!-- 表格主体数据区域 -->
 				<tbody>
-				
-					<tr ><foreach name="data" item="vo">
+				<foreach name="data" item="vo">
+					<tr >
 						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/banners/<{$vo.banner_url}>" width="420"></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><{$vo.upload_time|date="Y-m-d",###}></td>
-						<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" <a href="__URL__/rebanner/id/<{$vo.id}>" data-toggle="modal" data-target="#replaceModal">替换</button></div></td>
-						<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><button type="button" class="btn btn-default"><a href="__URL__/delbanner/id/<{$vo.id}>"></a>删除</button></div></td>
-					</foreach>
-					</tr>
+						<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><{$vo.banner_name}></td>
+						<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" id="tihuan" tihuan="<{$vo.id}>"  data-toggle="modal" data-target="#myModal">替换</button></div></td>
+						<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><button type="button" id="<{$vo.id}>" class="delbanner" delbanner="<{$vo.id}>" class="btn btn-default">删除</button></td>
 					
-					<tr>
+					</tr>
+					</foreach>
+					<tr height="100">
 						<td style="text-align:center;vertical-align:middle;font-size:175px;font-family:'宋体';" data-toggle="modal" data-target="#myModal">+</td>
 						<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证1920*440</td>
 					</tr>
@@ -103,7 +126,7 @@
 		</div> <span id="tip"> </span>
 			<!--添加banner的模态框-->
 			<!--更新的banner配图的模态框-->
-			<div class="col-md-offset-3 col-md-5">
+			<!-- <div class="col-md-offset-3 col-md-5">
 			<div class="row checkbox">
 				<div class="col-md-12">
 					<label>
@@ -144,7 +167,7 @@
 						</form>
 					</label>
 				</div>
-			</div>
+			</div> -->
 		</div> <span id="tip"> </span>
 			<!--更新的banner配图的模态框-->
 		</div>

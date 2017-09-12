@@ -102,16 +102,16 @@
 								</thead>
 								<!-- 表格主体数据区域 -->
 								<tbody>
-								<foreach name="data" item="vo">
+							
 									<tr>
 										<foreach name="data" item="vo">
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><img src="__PUBLIC__/Uploads/activity/<{$vo.banner_url}>" width="420"></td>
 										<td style="font-size:26px;font-family:'黑体';text-align:center;vertical-align:middle;"><{$vo.upload_time|date="Y-m-d",###}></td>
-										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" <a href="__URL__/rebanner/id/<{$vo.id}>" data-toggle="modal" data-target="#replaceModal">替换</button></div></td>
+										<td style="font-size:26px;font-family:'黑体';text-align:right;vertical-align:middle;"><div><button type="button" class="btn btn-default" id="tihuan" tihuan="<{$vo.id}>" data-toggle="modal" data-target="#myModal">替换</button></div></td>
 										<td style="font-size:26px;font-family:'黑体';vertical-align:middle;"><div><button type="button" class="btn btn-default"><a href="__URL__/delactivity/id/<{$vo.id}>"></a>删除</button></div></td>
 										</foreach>
 									</tr>
-									</foreach>
+								
 									<tr >
 										<td  style="font-size:175px;font-family:'宋体';text-align:center;vertical-align:middle;" data-toggle="modal" data-target="#myModal">+</td>
 										<td colspan="3" style="font-size:26px;font-family:'黑体';vertical-align:middle;">&nbsp;&nbsp;添加新图片，封面图片大小保证300*300</td>
@@ -124,7 +124,7 @@
 				</div>
 			</div>
 <!--替换活动-->
-			<div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+			<!-- <div class="modal fade" id="replaceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -205,7 +205,7 @@
 					</div>
 				</div>
 			</div>
-			</div>
+			</div> -->
 <!--替换活动-->
 <!--添加活动-->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
@@ -216,51 +216,39 @@
 							<h4 class="modal-title" id="myModalLabel" style="text-align:center;">热门旅游发布</h4>
 						</div>
 						<div class="modal-body" style="line-height:20px;">
-						<form action="__URL__/inspecial"  method="post"  enctype="multipart/form-data" class="form-horizontal">
+						<form action="__URL__/insactivity"  method="post"  enctype="multipart/form-data" class="form-horizontal">
 							<div>产品标题</div>
 							<br>
-							<div ><input type="text" name="title_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_title" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>封面配图</div>
 							<br>
 							<div>
 							<div id="preview" style="width:100px; height: 100px;"></div>
-							<div style="text-align:center;vertical-align:middle;">图片需为375*375</div>
-							<div><input type="file" name="cover_picture" onchange="preview(this)"/></div>
+							<div style="text-align:center;vertical-align:middle;">图片需为280*500</div>
+							<div><input type="file" name="activity_picurl" onchange="preview(this)"/></div>
 							</div>
-							<br>
-							<div>主页标题</div>
-							<br>
-							<div ><input type="text" name="home_tilte" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页价格</div>
-							<br>
-							<div ><input type="text" name="home_price" style="width:500px; height:30px; border:1px solid black;"></div>
-							<br>
-							<div>主页项目简介</div>
-							<br>
-							<div ><input type="text" name="project_profile" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>价格</div>
 							<br>
-							<div ><input type="text" name="special_price" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_price" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>出发城市</div>
 							<br>
-							<div ><input type="text" name="start_city" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_startcity" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div class="box">					
 							<div class="demo1">
 								<h3>出游日期</h3>
-								<input class="inline laydate-icon" name="start_time" id="start_time" value="2017-8-25更新">--
-								<input class="inline laydate-icon" name="end_time" id="end_time" value="2017-8-25更新">
+								<input class="inline laydate-icon" name="activity_starttime" id="start_time" value="2017-8-25更新">--
+								<input class="inline laydate-icon" name="activity_endtime" id="end_time" value="2017-8-25更新">
 								
 							</div>
 							</div>
 							<br>
 							<div>标签</div>
 							<br>
-							<div ><input type="text" name="label_name" style="width:500px; height:30px; border:1px solid black;"></div>
+							<div ><input type="text" name="activity_lable" style="width:500px; height:30px; border:1px solid black;"></div>
 							<br>
 							<div>展示窗配图</div>
 							<br>
@@ -281,7 +269,7 @@
 							<div>版块内容</div>
 							<br>
 							<div >
-								<textarea  id='gdescription1' cols='70' rows='4' name="gdescription" placeholder='享受美好旅行，从现在开始；'></textarea></div>
+								<textarea  id='gdescription1' cols='70' rows='4' name="activity_content" placeholder='享受美好旅行，从现在开始；'></textarea></div>
 						<div class="modal-footer" style="text-align:center;">
 							<button type="submit" class="btn btn-primary" >保存</button>
 						</div>

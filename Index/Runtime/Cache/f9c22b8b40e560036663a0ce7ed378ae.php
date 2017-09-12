@@ -219,15 +219,14 @@
 		<div class="flexslider">
 			<ul class="slides">
 				<!-- THE FIRST SLIDE 第一张滑动图片 -->
-				<li>
+				<?php if(is_array($databanner)): foreach($databanner as $key=>$rows): ?><li>
 					<!-- THE MAIN IMAGE IN THE SLIDE 主图像幻灯片 -->
-					<img src="__PUBLIC__/index/rev-slider/img/slides/Street-Fashion.jpg" alt="" />
-				</li>
-			
+					<img src="__PUBLIC__/Uploads/banners/<?php echo ($rows["banner_url"]); ?>">
+				</li><?php endforeach; endif; ?>
 				<!-- THE SECOND SLIDE 第二张滑动图片 -->
 				<li style="background: #fa6f57;">
 					<!-- THE MAIN IMAGE IN THE SLIDE 主图像幻灯片 -->
-					<img src="__PUBLIC__/index/img/transparent.png" alt="" />
+					<img src="__PUBLIC__/Uploads/banners/1111111.jpg" alt="" />
 					
 					<div class="flex-caption super-giant gfc animated uppercase"
 					data-animation="fadeInUp"
@@ -259,10 +258,6 @@
 				</li>
 			
 				<!-- THE THREE SLIDE 第三章滑动图片 -->
-				<li>
-					<!-- THE MAIN IMAGE IN THE SLIDE 主图像幻灯片 -->
-					<img src="__PUBLIC__/index/rev-slider/img/slides/3303349658_cfaebb811f_o.jpg" alt="" />
-				</li>
 			</ul>
 		</div>
 	</div>
